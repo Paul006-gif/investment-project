@@ -65,3 +65,14 @@ html, body {
 .scroll-to-top:active {
 	transform: translateY(0);
 }
+
+/* Mobile Responsive Scrollbar */
+@media (max-width: 768px) {
+	::-webkit-scrollbar {
+		width: 8px;
+	}
+
+	::-webkit-scrollbar-thumb {
+		border-radius: 4px;
+	}
+}

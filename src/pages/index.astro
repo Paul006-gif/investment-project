@@ -11,9 +11,9 @@ import '../styles/global.css';
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Horizon Wealth - Investment Platform</title>
 	</head>
 	<body>
 		<Header />
@@ -210,6 +210,90 @@ import '../styles/global.css';
 		color: #64748b;
 		line-height: 1.6;
 		max-width: 600px;
+	}
+
+	/* Responsive Hero Section */
+	@media (max-width: 1024px) {
+		.hero {
+			padding: 30px 40px 60px;
+		}
+
+		.hero-content {
+			gap: 40px;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.hero-text {
+			max-width: 100%;
+			margin: 0;
+			text-align: center;
+		}
+
+		.hero-motto {
+			font-size: 3.5rem;
+		}
+
+		.hero-sub-motto {
+			font-size: 1rem;
+			max-width: 100%;
+		}
+
+		.hero-video {
+			width: 100% !important;
+			max-width: 400px;
+			margin: 0 !important;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.hero {
+			padding: 20px 20px 40px;
+		}
+
+		.hero-content {
+			gap: 20px;
+		}
+
+		.hero-motto {
+			font-size: 2.5rem;
+			margin: 0 0 15px 0;
+		}
+
+		.hero-sub-motto {
+			font-size: 0.95rem;
+			margin: 0 0 20px 0;
+		}
+
+		.hero-video {
+			width: 100% !important;
+			max-width: 300px !important;
+		}
+
+		.btn {
+			font-size: 1rem;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.hero {
+			padding: 15px 12px 30px;
+		}
+
+		.hero-motto {
+			font-size: 2rem;
+			margin: 0 0 12px 0;
+		}
+
+		.hero-sub-motto {
+			font-size: 0.9rem;
+			margin: 0 0 15px 0;
+		}
+
+		.hero-video {
+			width: 100% !important;
+			max-width: 250px !important;
+		}
 	}
 
 	.btn {
@@ -451,6 +535,125 @@ import '../styles/global.css';
 		max-width: 500px;
 	}
 
+	/* Responsive Services Sections */
+	@media (max-width: 1024px) {
+		.realestate-content,
+		.mining-content,
+		.stockmarket-content,
+		.crypto-content {
+			flex-direction: column;
+			gap: 40px;
+		}
+
+		.realestate-text,
+		.mining-text,
+		.stockmarket-text,
+		.crypto-text {
+			text-align: center;
+		}
+
+		.realestate-text h2,
+		.mining-text h2,
+		.stockmarket-text h2,
+		.crypto-text h2 {
+			font-size: 1.5rem;
+		}
+
+		.realestate-image,
+		.mining-image,
+		.stockmarket-image,
+		.crypto-image {
+			width: 100%;
+			max-width: 400px;
+			height: 300px;
+		}
+
+		.what-we-do-section {
+			padding: 30px 20px;
+		}
+
+		.mining-section,
+		.stockmarket-section,
+		.crypto-section {
+			padding: 40px 20px;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.realestate-content,
+		.mining-content,
+		.stockmarket-content,
+		.crypto-content {
+			gap: 20px;
+			padding: 0 20px;
+		}
+
+		.realestate-text,
+		.mining-text,
+		.stockmarket-text,
+		.crypto-text {
+			max-width: 100%;
+		}
+
+		.realestate-description,
+		.mining-description,
+		.stockmarket-description,
+		.crypto-description {
+			font-size: 1rem;
+			max-width: 100%;
+		}
+
+		.realestate-image,
+		.mining-image,
+		.stockmarket-image,
+		.crypto-image {
+			width: 100%;
+			height: 250px;
+		}
+
+		.mining-section,
+		.stockmarket-section,
+		.crypto-section {
+			padding: 30px 0;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.realestate-content,
+		.mining-content,
+		.stockmarket-content,
+		.crypto-content {
+			padding: 0 12px;
+		}
+
+		.realestate-text h2,
+		.mining-text h2,
+		.stockmarket-text h2,
+		.crypto-text h2 {
+			font-size: 1.3rem;
+		}
+
+		.realestate-description,
+		.mining-description,
+		.stockmarket-description,
+		.crypto-description {
+			font-size: 0.95rem;
+		}
+
+		.realestate-image,
+		.mining-image,
+		.stockmarket-image,
+		.crypto-image {
+			height: 200px;
+			border-radius: 12px;
+		}
+
+		.explore-btn {
+			padding: 10px 20px;
+			font-size: 0.95rem;
+		}
+	}
+
 	.cta-section {
 		background: #1e40af;
 		padding: 80px 0;
@@ -495,6 +698,71 @@ import '../styles/global.css';
 		background: #f8fafc;
 		transform: translateY(-2px);
 		box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+	}
+
+	/* Responsive CTA Section */
+	@media (max-width: 1024px) {
+		.cta-section {
+			padding: 60px 30px;
+			margin-top: 40px;
+		}
+
+		.cta-heading {
+			font-size: 2rem;
+		}
+
+		.cta-description {
+			font-size: 1.1rem;
+		}
+
+		.cta-btn {
+			font-size: 1rem;
+			padding: 12px 28px;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.cta-section {
+			padding: 40px 20px;
+			margin-top: 30px;
+		}
+
+		.cta-heading {
+			font-size: 1.75rem;
+			margin: 0 0 15px 0;
+		}
+
+		.cta-description {
+			font-size: 1rem;
+			margin: 0 0 25px 0;
+		}
+
+		.cta-btn {
+			font-size: 0.95rem;
+			padding: 10px 24px;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.cta-section {
+			padding: 30px 15px;
+			margin-top: 20px;
+		}
+
+		.cta-heading {
+			font-size: 1.5rem;
+			margin: 0 0 12px 0;
+		}
+
+		.cta-description {
+			font-size: 0.9rem;
+			margin: 0 0 20px 0;
+		}
+
+		.cta-btn {
+			font-size: 0.9rem;
+			padding: 8px 20px;
+		}
 	}
 
 	.trades-section {
@@ -746,14 +1014,122 @@ import '../styles/global.css';
 		margin: 0;
 	}
 
+	.trades-section-responsive {
+		padding: 40px 20px;
+	}
+
+	.trades-heading-responsive {
+		font-size: 2rem;
+		margin: 0 0 30px 0;
+	}
+
+	.switch-container-responsive {
+		max-width: 100%;
+	}
+
+	/* Responsive Trades Section */
+	@media (max-width: 1024px) {
+		.trades-section {
+			padding: 40px 20px;
+		}
+
+		.trades-heading {
+			font-size: 2rem;
+		}
+
+		.table-container {
+			max-width: 100%;
+			margin: 30px 0 0 0;
+		}
+	}
+
 	@media (max-width: 768px) {
+		.trades-section {
+			padding: 30px 15px;
+		}
+
+		.trades-heading {
+			font-size: 1.6rem;
+		}
+
+		.trades-table th,
+		.trades-table td {
+			padding: 10px 8px;
+			font-size: 0.75rem;
+		}
+
+		.trades-table .symbol {
+			font-size: 0.85rem;
+		}
+
+		.trades-table .price {
+			font-size: 0.85rem;
+		}
+
+		.switch-buttons {
+			gap: 5px;
+		}
+
+		.switch-btn {
+			padding: 8px 16px;
+			font-size: 0.9rem;
+		}
+
+		.table-container {
+			margin: 20px 0 0 0;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.trades-section {
+			padding: 20px 10px;
+		}
+
+		.trades-heading {
+			font-size: 1.3rem;
+			margin: 0 0 20px 0;
+		}
+
+		.trades-table th,
+		.trades-table td {
+			padding: 8px 6px;
+			font-size: 0.7rem;
+		}
+
+		.switch-btn {
+			padding: 6px 12px;
+			font-size: 0.8rem;
+		}
+
+		.table-container {
+			margin: 15px 0 0 0;
+			border-radius: 12px;
+		}
+	}
+
+	/* Responsive Testimonials Section */
+	@media (max-width: 1024px) {
 		.testimonials-section {
-			padding: 60px 20px;
+			padding: 60px 30px;
 		}
 
 		.testimonials-heading {
-			font-size: 2rem;
-			margin-bottom: 2rem;
+			font-size: 2.2rem;
+		}
+
+		.testimonials-grid {
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		}
+	}
+
+	@media (max-width: 768px) {
+		.testimonials-section {
+			padding: 40px 20px;
+		}
+
+		.testimonials-heading {
+			font-size: 1.8rem;
+			margin-bottom: 1.5rem;
 		}
 
 		.testimonials-grid {
@@ -763,18 +1139,77 @@ import '../styles/global.css';
 
 		.testimonial-card {
 			padding: 1.5rem;
+			border-radius: 12px;
 		}
 
 		.testimonial-text {
 			font-size: 0.95rem;
 		}
+
+		.author-name {
+			font-size: 1rem;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.testimonials-section {
+			padding: 30px 15px;
+		}
+
+		.testimonials-heading {
+			font-size: 1.5rem;
+			margin-bottom: 1.2rem;
+		}
+
+		.testimonials-grid {
+			gap: 1rem;
+		}
+
+		.testimonial-card {
+			padding: 1.2rem;
+			border-left: 3px solid #1e40af;
+		}
+
+		.testimonial-text {
+			font-size: 0.9rem;
+			margin-bottom: 1rem;
+		}
+
+		.author-avatar {
+			width: 40px !important;
+			height: 40px !important;
+			font-size: 1rem !important;
+		}
+
+		.author-name {
+			font-size: 0.95rem;
+		}
+
+		.author-title {
+			font-size: 0.8rem;
+		}
 	}
 </style>
 
-<script type="module" src="/src/scripts/ticker.js"></script>
-<script type="module" src="/src/scripts/trades.js"></script>
-<script type="module" src="/src/scripts/liveStockData.js"></script>
-<script type="module" src="/src/scripts/liveForexData.js"></script>
+<script is:inline>
+	// Dynamically load scripts to ensure they're available in production
+	async function loadScripts() {
+		try {
+			const tickerScript = await import('/scripts/ticker.js');
+			const tradesScript = await import('/scripts/trades.js');
+			const liveStockScript = await import('/scripts/liveStockData.js');
+			const liveForexScript = await import('/scripts/liveForexData.js');
+		} catch (error) {
+			console.error('Failed to load scripts:', error);
+		}
+	}
+	
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', loadScripts);
+	} else {
+		loadScripts();
+	}
+</script>
 
 <script>
 	function scrollToTop() {

@@ -1,22 +1,22 @@
 
 <section class="services">
 	<ul class="services-grid">
-		<li>
+		<a href="/services#cryptocurrency" class="services-item">
 			<h4>Cryptocurrency</h4>
 			<p>Institutional-grade custody, trading, and staking strategies for digital assets.</p>
-		</li>
-		<li>
+		</a>
+		<a href="/services#real-estate" class="services-item">
 			<h4>Real Estate</h4>
 			<p>Direct and syndicated property investments with active asset management support.</p>
-		</li>
-		<li>
+		</a>
+		<a href="/services#stock-market" class="services-item">
 			<h4>Stock Market</h4>
 			<p>Global equity portfolios built on data-driven research and risk controls.</p>
-		</li>
-		<li>
+		</a>
+		<a href="/services#mining" class="services-item">
 			<h4>Mining Sectors</h4>
 			<p>Opportunities in precious and industrial metals backed by on-the-ground expertise.</p>
-		</li>
+		</a>
 	</ul>
 	<a class="services-cta" href="/services">Explore all services</a>
 </section>
@@ -25,45 +25,53 @@
 	.services {
 		display: flex;
 		flex-direction: column;
-		gap: 24px;
-		padding: 24px 28px;
+		gap: 20px;
+		padding: 28px 32px;
 		background: #ffffff;
-		border-radius: 20px;
-		box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+		border-radius: 16px;
+		box-shadow: 0 16px 40px rgba(15, 23, 42, 0.15);
 		width: clamp(360px, 38vw, 560px);
+		backdrop-filter: blur(10px);
 	}
 
 	.services-grid {
 		list-style: none;
 		display: grid;
 		grid-template-columns: repeat(2, minmax(0, 1fr));
-		gap: 20px;
+		gap: 16px;
 		margin: 0;
 		padding: 0;
 	}
 
-	.services-grid li {
-		padding: 16px;
-		border-radius: 16px;
-		background: transparent;
-		transition: background-color 0.2s ease;
+	.services-item {
+		padding: 18px;
+		border-radius: 12px;
+		background: linear-gradient(135deg, #f8fafc 0%, #f0f4ff 100%);
+		border: 1px solid #e0e7ff;
+		transition: all 0.25s ease;
 		cursor: pointer;
+		text-decoration: none;
+		display: block;
 	}
 
-	.services-grid li:hover {
-		background: #f5f5f5;
+	.services-item:hover {
+		background: linear-gradient(135deg, #f0f4ff 0%, #e0e7ff 100%);
+		border-color: #1e40af;
+		box-shadow: 0 8px 20px rgba(30, 64, 175, 0.1);
+		transform: translateY(-2px);
 	}
 
-	.services-grid h4 {
-		margin: 0 0 6px;
-		font-size: 1.05rem;
-		font-weight: 600;
+	.services-item h4 {
+		margin: 0 0 8px;
+		font-size: 1.1rem;
+		font-weight: 700;
+		color: #1e293b;
 	}
 
-	.services-grid p {
+	.services-item p {
 		margin: 0;
-		font-size: 0.9rem;
-		color: #475569;
+		font-size: 0.85rem;
+		color: #64748b;
 		line-height: 1.5;
 	}
 
@@ -73,10 +81,75 @@
 		font-size: 0.95rem;
 		color: #1e40af;
 		text-decoration: none;
-		transition: color 0.2s ease;
+		transition: all 0.25s ease;
+		padding: 8px 12px;
+		border-radius: 6px;
+		display: inline-flex;
+		align-items: center;
+		gap: 4px;
 	}
 
 	.services-cta:hover {
-		color: #1a3a9c;
+		color: #fff;
+		background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+		transform: translateX(4px);
+	}
+
+	/* Mobile Styles */
+	@media (max-width: 768px) {
+		.services {
+			width: 100%;
+			padding: 0;
+			background: transparent;
+			box-shadow: none;
+			gap: 0;
+			backdrop-filter: none;
+			border-radius: 0;
+		}
+
+		.services-grid {
+			display: flex;
+			flex-direction: column;
+			gap: 0;
+		}
+
+		.services-item {
+			padding: 16px;
+			margin-left: 16px;
+			border-radius: 0;
+			background: transparent;
+			border: none;
+			border-bottom: 1px solid #f5f5f5;
+			cursor: pointer;
+		}
+
+		.services-item:hover {
+			background-color: #f0f4ff;
+			border-color: #f5f5f5;
+			box-shadow: none;
+			transform: none;
+		}
+
+		.services-item h4 {
+			font-size: 1.1rem;
+			margin: 0 0 4px;
+		}
+
+		.services-item p {
+			display: none;
+		}
+
+		.services-cta {
+			margin-left: 16px;
+			padding: 16px 0;
+			font-size: 1.1rem;
+			border-bottom: 1px solid #f5f5f5;
+		}
+
+		.services-cta:hover {
+			background: transparent;
+			color: #1e40af;
+			transform: none;
+		}
 	}
 </style>

@@ -34,7 +34,7 @@ const { cards } = Astro.props;
 
 <style>
   .feature-cards-section {
-    padding: 10px 250px 40px 250px;
+    padding: 40px 20px;
     background: transparent;
   }
 
@@ -78,10 +78,11 @@ const { cards } = Astro.props;
   .feature-card-content {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     text-align: left;
     height: 100%;
     gap: 30px;
+    width: 100%;
   }
 
   .feature-number {
@@ -152,6 +153,16 @@ const { cards } = Astro.props;
     .feature-card {
       flex: 1 1 100%;
       min-width: 100%;
+    }
+
+    .feature-card-content {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .feature-number {
+      margin-bottom: 15px;
+      margin-right: 0;
     }
     
     .about-image {
