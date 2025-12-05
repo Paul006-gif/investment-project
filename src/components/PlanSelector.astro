@@ -1,0 +1,159 @@
+---
+export interface Props {
+	plans: Array<{
+		id: string;
+		tier: string;
+		component: any;
+	}>;
+}
+
+const { plans } = Astro.props;
+---
+
+<div class="plan-selector-wrapper">
+	<div class="plan-selector-tabs">
+		<button class="plan-tab active" data-tier="starter">
+			<span class="tab-label">Starter</span>
+		</button>
+		<button class="plan-tab" data-tier="growth">
+			<span class="tab-label">Growth</span>
+		</button>
+		<button class="plan-tab" data-tier="premium">
+			<span class="tab-label">Premium</span>
+		</button>
+	</div>
+
+	<div class="plan-content-wrapper">
+		<div class="plan-content starter-content active" data-tier="starter">
+			<slot name="starter" />
+		</div>
+		<div class="plan-content growth-content" data-tier="growth">
+			<slot name="growth" />
+		</div>
+		<div class="plan-content premium-content" data-tier="premium">
+			<slot name="premium" />
+		</div>
+	</div>
+</div>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const tabs = document.querySelectorAll('.plan-tab');
+		const contents = document.querySelectorAll('.plan-content');
+
+		tabs.forEach(tab => {
+			tab.addEventListener('click', () => {
+				const tier = tab.getAttribute('data-tier');
+
+				// Update active tab
+				tabs.forEach(t => t.classList.remove('active'));
+				tab.classList.add('active');
+
+				// Update active content
+				contents.forEach(content => {
+					content.classList.remove('active');
+				});
+				document.querySelector(`.${tier}-content`)?.classList.add('active');
+			});
+		});
+	});
+</script>
+
+<style>
+	.plan-selector-wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+		width: 100%;
+	}
+
+	.plan-selector-tabs {
+		display: flex;
+		justify-content: center;
+		gap: 16px;
+		flex-wrap: wrap;
+	}
+
+	.plan-tab {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		padding: 12px 24px;
+		background: #f5f5f5;
+		border: 2px solid transparent;
+		border-radius: 9999px;
+		font-size: 1rem;
+		font-weight: 600;
+		color: #6b7280;
+		cursor: pointer;
+		transition: all 0.3s ease;
+	}
+
+	.plan-tab:hover {
+		background: #e5e7eb;
+		transform: translateY(-2px);
+	}
+
+	.plan-tab.active {
+		background: #1e40af;
+		color: white;
+		border-color: #1e40af;
+		box-shadow: 0 10px 25px rgba(30, 64, 175, 0.2);
+	}
+
+	.plan-content-wrapper {
+		width: 100%;
+		overflow-x: auto;
+	}
+
+	.plan-content {
+		display: none;
+		width: 100%;
+		gap: 20px;
+		justify-content: center;
+	}
+
+	.plan-content[data-tier="starter"],
+	.plan-content[data-tier="growth"] {
+		display: none;
+		flex-wrap: wrap;
+		gap: 20px;
+		justify-content: center;
+		align-items: flex-start;
+	}
+
+	.plan-content[data-tier="premium"] {
+		display: none;
+		gap: 20px;
+		justify-content: center;
+		align-items: flex-start;
+	}
+
+	.plan-content.active {
+		display: flex;
+	}
+
+	@media (max-width: 900px) {
+		.plan-content[data-tier="starter"],
+		.plan-content[data-tier="growth"] {
+			flex-direction: column;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.plan-selector-tabs {
+			gap: 12px;
+		}
+
+		.plan-tab {
+			padding: 10px 18px;
+			font-size: 0.95rem;
+		}
+
+		.plan-content[data-tier="starter"],
+		.plan-content[data-tier="growth"],
+		.plan-content[data-tier="premium"] {
+			flex-direction: column;
+		}
+	}
+</style>

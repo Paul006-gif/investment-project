@@ -1,0 +1,168 @@
+---
+import searchIcon from './icons/search.svg';
+---
+
+<div class="language-modal">
+	<div class="language-content">
+		<h3 class="modal-title">Language and region</h3>
+		<div class="search-container">
+			<div class="search-input-wrapper">
+				<img src={searchIcon.src} alt="Search" class="search-icon">
+				<input type="text" placeholder="Search" class="search-input">
+			</div>
+		</div>
+		<div class="language-list">
+			<button class="language-btn">
+				<span class="language-name">English</span>
+				<span class="region-name">United States</span>
+			</button>
+			<button class="language-btn">
+				<span class="language-name">English</span>
+				<span class="region-name">United Kingdom</span>
+			</button>
+			<button class="language-btn">
+				<span class="language-name">Spanish</span>
+				<span class="region-name">Spain</span>
+			</button>
+			<button class="language-btn">
+				<span class="language-name">Spanish</span>
+				<span class="region-name">Mexico</span>
+			</button>
+			<button class="language-btn">
+				<span class="language-name">French</span>
+				<span class="region-name">France</span>
+			</button>
+			<button class="language-btn">
+				<span class="language-name">French</span>
+				<span class="region-name">Canada</span>
+			</button>
+			<button class="language-btn">
+				<span class="language-name">German</span>
+				<span class="region-name">Germany</span>
+			</button>
+			<button class="language-btn">
+				<span class="language-name">Italian</span>
+				<span class="region-name">Italy</span>
+			</button>
+			<button class="language-btn">
+				<span class="language-name">Portuguese</span>
+				<span class="region-name">Brazil</span>
+			</button>
+			<button class="language-btn">
+				<span class="language-name">Portuguese</span>
+				<span class="region-name">Portugal</span>
+			</button>
+		</div>
+	</div>
+</div>
+
+<style>
+	.language-modal {
+		position: absolute;
+		top: 100%;
+		right: 0;
+		margin-top: 8px;
+		z-index: 1000;
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.3s ease;
+	}
+
+	.language-content {
+		background-color: white;
+		border-radius: 12px;
+		padding: 24px;
+		width: 300px;
+		height: 350px;
+		border: 1px solid #e5e7eb;
+		box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+		overflow-y: auto;
+	}
+
+	.modal-title {
+		font-size: 1.25rem;
+		font-weight: 600;
+		margin: 0 0 20px 0;
+		color: #111827;
+	}
+
+	.search-container {
+		margin-bottom: 20px;
+	}
+
+	.search-input-wrapper {
+		position: relative;
+		display: flex;
+		align-items: center;
+	}
+
+	.search-icon {
+		position: absolute;
+		left: 16px;
+		width: 16px;
+		height: 16px;
+		opacity: 0.5;
+		pointer-events: none;
+	}
+
+	.search-input {
+		width: calc(100% - 32px);
+		padding: 12px 16px 12px 44px;
+		border: 2px solid transparent;
+		border-radius: 24px;
+		background-color: #f9fafb;
+		font-size: 0.875rem;
+		outline: none;
+		transition: border-color 0.2s ease, background-color 0.2s ease;
+	}
+
+	.search-input:focus {
+		border-color: #1e40af;
+		background-color: #f9fafb;
+	}
+
+	.search-input::placeholder {
+		color: #9ca3af;
+	}
+
+	.language-list {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+
+	.language-btn {
+		width: 100%;
+		padding: 12px 16px;
+		border: none;
+		border-radius: 8px;
+		background-color: transparent;
+		text-align: left;
+		cursor: pointer;
+		transition: background-color 0.2s ease;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.language-name {
+		font-size: 0.875rem;
+		font-weight: 600;
+		color: #374151;
+		margin-bottom: 2px;
+	}
+
+	.region-name {
+		font-size: 0.75rem;
+		font-weight: 400;
+		color: #6b7280;
+	}
+
+	.language-btn:hover {
+		background-color: #f3f4f6;
+	}
+	.language-btn:focus {
+		outline: 2px solid #1e40af;
+		outline-offset: 2px;
+	}
+</style>

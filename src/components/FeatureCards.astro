@@ -1,0 +1,161 @@
+---
+export interface Props {
+  cards: Array<{
+    title: string;
+    description: string;
+    icon?: string;
+  }>;
+}
+
+const { cards } = Astro.props;
+---
+
+<section class="feature-cards-section">
+  <div class="feature-cards-wrapper">
+    <div class="feature-cards-container">
+      {cards.map((card, index) => (
+        <div class="feature-card">
+          <div class="feature-card-content">
+            <div class="feature-number">0{index + 1}</div>
+            <div class="feature-content-wrapper">
+              {card.icon && <div class="feature-icon">{card.icon}</div>}
+              <h3>{card.title}</h3>
+              <p>{card.description}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+    <div class="feature-image">
+      <img src="/about.png" alt="About" class="about-image" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .feature-cards-section {
+    padding: 10px 250px 40px 250px;
+    background: transparent;
+  }
+
+  .feature-cards-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+  }
+
+  .feature-cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex: 1;
+  }
+
+  .feature-image {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about-image {
+    max-width: 600px;
+    height: auto;
+    border-radius: 20px;
+  }
+
+  .feature-card {
+    width: 100%;
+    background: transparent;
+    border-radius: 15px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    cursor: pointer;
+  }
+
+  
+  .feature-card-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    height: 100%;
+    gap: 30px;
+  }
+
+  .feature-number {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #1e40af;
+    opacity: 0.8;
+    flex-shrink: 0;
+    min-width: 100px;
+    margin-right: 40px;
+  }
+
+  .feature-content-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .feature-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #1e40af;
+  }
+
+  .feature-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #000000;
+    margin: 0 0 15px 0;
+  }
+
+  .feature-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666666;
+    margin: 0;
+  }
+
+  @media (max-width: 1200px) {
+    .feature-cards-wrapper {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .feature-cards-container {
+      width: 100%;
+    }
+    
+    .feature-card {
+      flex: 1 1 calc(50% - 15px);
+      min-width: calc(50% - 15px);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .feature-cards-section {
+      padding: 40px 20px;
+    }
+    
+    .feature-cards-wrapper {
+      gap: 40px;
+    }
+    
+    .feature-cards-container {
+      gap: 20px;
+    }
+    
+    .feature-card {
+      flex: 1 1 100%;
+      min-width: 100%;
+    }
+    
+    .about-image {
+      max-width: 300px;
+    }
+  }
+</style>

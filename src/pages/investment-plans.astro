@@ -1,0 +1,520 @@
+---
+import Header from '../components/Header.astro';
+import InvestmentPlanCard from '../components/InvestmentPlanCard.astro';
+import PlanSelector from '../components/PlanSelector.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Investment Plans - Horizon Wealth</title>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Choose your investment plan</h1>
+			
+			<section>
+				<h2>Standard Investment Plans</h2>
+				<p>Each tier includes different minimum deposits, asset strategies, risk levels, Profit Percentage and features.</p>
+				
+				<PlanSelector>
+					<InvestmentPlanCard slot="starter"
+						planName="Beginner Plan (Bronze)"
+						profitRate="15%"
+						minInvestment="$70"
+						maxInvestment="$699"
+						profitDuration="after 5 days"
+						riskLevel="Low"
+						suitableFor="First-time investors, students, small savers"
+						strategyIncludes={[
+							"Weekly portfolio insights",
+							"Low entry barrier",
+							"Capital preservation focus",
+							"No lock-in period"
+						]}
+						profitWithdrawal="Anytime"
+						capitalWithdrawal="Anytime"
+						referralBonus="N/A"
+						duration="5 days"
+						buttonText="Get Started Now"
+					/>
+					
+					<InvestmentPlanCard slot="starter"
+						planName="Advanced Plan (Silver)"
+						profitRate="25%"
+						minInvestment="$500"
+						maxInvestment="$2,999"
+						profitDuration="after 48 hrs"
+						riskLevel="Moderate"
+						suitableFor="Casual investors with little investment experience"
+						strategyIncludes={[
+							"Higher exposure to growth assets",
+							"Better diversification",
+							"Monthly performance reports"
+						]}
+						profitWithdrawal="48 hours notice period"
+						capitalWithdrawal="48 hours notice period"
+						referralBonus="N/A"
+						duration="48 hours"
+						buttonText="Get Started Now"
+					/>
+
+					<InvestmentPlanCard slot="growth"
+						planName="Growth Plan (Gold)"
+						profitRate="30%"
+						minInvestment="$3,000"
+						maxInvestment="$9,999"
+						profitDuration="after 3 days"
+						riskLevel="Moderate–High"
+						suitableFor="Active investors & medium-term holders"
+						strategyIncludes={[
+							"Risk-adjusted DeFi positions",
+							"Higher growth potential",
+							"Priority support",
+							"Access to market alerts"
+						]}
+						profitWithdrawal="5 days notice"
+						capitalWithdrawal="5 days notice"
+						referralBonus="N/A"
+						duration="3 days"
+						buttonText="Get Started Now"
+					/>
+
+					<InvestmentPlanCard slot="growth"
+						planName="Professional Plan (Diamond)"
+						profitRate="40%"
+						minInvestment="$10,000"
+						maxInvestment="$49,999"
+						profitDuration="after 48 hrs"
+						riskLevel="High, But Insured"
+						suitableFor="Experienced investors"
+						strategyIncludes={[
+							"Multi-chain diversified holdings",
+							"Managed DeFi yield strategies",
+							"Auto-staking and compounding",
+							"Quarterly strategy sessions"
+						]}
+						profitWithdrawal="7 days notice"
+						capitalWithdrawal="7 days notice"
+						referralBonus="N/A"
+						duration="48 hours"
+						buttonText="Get Started Now"
+					/>
+
+					<InvestmentPlanCard slot="premium"
+						planName="Executive Plan (Platinum)"
+						profitRate="55%"
+						minInvestment="$50,000"
+						maxInvestment="$250,000+"
+						profitDuration="after 7 days"
+						riskLevel="High (Customizable) But Insured"
+						suitableFor="High-net-worth individuals"
+						strategyIncludes={[
+							"Customized crypto portfolio",
+							"Institutional-grade custody",
+							"Direct access to analysts",
+							"High-yield staking nodes",
+							"Mining integration"
+						]}
+						profitWithdrawal="Customized (per contract) a week notice period"
+						capitalWithdrawal="Customized (per contract) a week notice period"
+						referralBonus="N/A"
+						duration="7 days"
+						buttonText="Get Started Now"
+					/>
+				</PlanSelector>
+			</section>
+
+			<section>
+				<h2>Specialized Plans</h2>
+				<p>These add additional categories such as retirement, insurance, and household/utility-based savings.</p>
+				<div class="plans-container">
+					<InvestmentPlanCard 
+						planName="Retirement Investment Plan"
+						profitRate="65%"
+						minInvestment="$2,000"
+						maxInvestment="$20,000+"
+						profitDuration="after 4 weeks (1 month)"
+						riskLevel="Low–Moderate"
+						suitableFor="Long-term savers"
+						strategyIncludes={[
+							"5–10 year growth portfolio",
+							"Inflation-resistant digital assets",
+							"Quarterly compounding strategies",
+							"Stablecoin yield protection",
+							"Long-term wealth building",
+							"Capital safety focus",
+							"Retirement-oriented growth"
+						]}
+						profitWithdrawal="4 weeks (1 month) Notice Period"
+						capitalWithdrawal="Optional Lock-in (1–5 years)"
+						referralBonus="N/A"
+						duration="1 month"
+						buttonText="Get Started Now"
+					/>
+					
+					<InvestmentPlanCard 
+						planName="Insurance-Backed Plan"
+						profitRate="45%"
+						minInvestment="$1,000"
+						maxInvestment="$10,000+"
+						profitDuration="after 2 weeks"
+						riskLevel="Low–Moderate"
+						suitableFor="Families & risk-averse investors"
+						strategyIncludes={[
+							"Capital protection through stablecoin reserves",
+							"Loss-mitigation protocols",
+							"Diversified assets to reduce volatility",
+							"Lower overall risk"
+						]}
+						profitWithdrawal="30–60 days notice"
+						capitalWithdrawal="30–60 days notice"
+						referralBonus="N/A"
+						duration="2 weeks"
+						buttonText="Get Started Now"
+					/>
+					
+					<InvestmentPlanCard 
+						planName="Household/UTILITY Plan"
+						profitRate="35%"
+						minInvestment="$250"
+						maxInvestment="$4,999"
+						profitDuration="after 7 days"
+						riskLevel="Low"
+						suitableFor="Parents, Family savings, Household emergency funds"
+						strategyIncludes={[
+							"Stablecoin liquidity pool",
+							"Automated micro-savings",
+							"Family-friendly structure",
+							"Savings-focused",
+							"Easy withdrawals"
+						]}
+						profitWithdrawal="Anytime"
+						capitalWithdrawal="Anytime"
+						referralBonus="N/A"
+						duration="7 days"
+						buttonText="Get Started Now"
+					/>
+				</div>
+			</section>
+
+			<!-- Plan Recommendation Section -->
+			<section class="recommendation">
+				<h2>Which Plan is Right for You?</h2>
+				<div class="recommendation-grid">
+					<div class="recommendation-card">
+						<h3>Starting Small?</h3>
+						<p>Begin your investment journey with our <strong>Beginner Plan</strong> at just $70 minimum</p>
+						<a href="#beginner" class="rec-link">Explore Bronze →</a>
+					</div>
+					<div class="recommendation-card">
+						<h3>Building Your Portfolio?</h3>
+						<p>Grow your wealth with <strong>Advanced or Growth Plans</strong> with higher returns</p>
+						<a href="#growth" class="rec-link">Explore Silver & Gold →</a>
+					</div>
+					<div class="recommendation-card">
+						<h3>Serious Investor?</h3>
+						<p>Maximize returns with <strong>Professional or Executive Plans</strong> for experienced investors</p>
+						<a href="#premium" class="rec-link">Explore Diamond & Platinum →</a>
+					</div>
+				</div>
+			</section>
+
+			<!-- Getting Started Section -->
+			<section class="getting-started">
+				<h2>How to Get Started</h2>
+				<div class="steps-container">
+					<div class="step">
+						<div class="step-number">1</div>
+						<h3>Choose Your Plan</h3>
+						<p>Select from our tiered or specialized investment plans based on your goals and budget</p>
+					</div>
+					<div class="step">
+						<div class="step-number">2</div>
+						<h3>Create Account</h3>
+						<p>Sign up with your email and complete the quick verification process</p>
+					</div>
+					<div class="step">
+						<div class="step-number">3</div>
+						<h3>Fund Your Account</h3>
+						<p>Deposit your investment amount through our secure payment methods</p>
+					</div>
+					<div class="step">
+						<div class="step-number">4</div>
+						<h3>Start Earning</h3>
+						<p>Watch your investment grow with automatic returns deposited to your account</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- Testimonials Section -->
+			<section class="testimonials">
+				<h2>What Our Investors Say</h2>
+				<div class="testimonials-grid">
+					<div class="testimonial-card">
+						<p class="testimonial-text">"I started with the Beginner Plan and was impressed with the consistent returns. Within 6 months, I upgraded to the Gold plan!"</p>
+						<p class="testimonial-author">— Sarah M., Investor since 2023</p>
+					</div>
+					<div class="testimonial-card">
+						<p class="testimonial-text">"The professional management and insurance coverage give me peace of mind. This is the best platform I've found."</p>
+						<p class="testimonial-author">— James K., Executive Plan Holder</p>
+					</div>
+					<div class="testimonial-card">
+						<p class="testimonial-text">"Fast withdrawals, transparent fees, and excellent support. Horizon Wealth exceeded my expectations."</p>
+						<p class="testimonial-author">— Maria L., Retirement Plan Member</p>
+					</div>
+				</div>
+			</section>
+
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+main {
+	padding: 80px 40px;
+	max-width: 1600px;
+	margin: 0 auto;
+}
+
+h1 {
+	font-size: 3.5rem;
+	font-weight: 700;
+	color: #111827;
+	margin: 0 0 60px 0;
+	text-align: center;
+	letter-spacing: -0.5px;
+}
+
+h2 {
+	font-size: 2rem;
+	font-weight: 700;
+	color: #111827;
+	margin: 60px 0 16px 0;
+	text-align: center;
+}
+
+p {
+	text-align: center;
+	color: #6b7280;
+	margin-bottom: 40px;
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 1.05rem;
+	line-height: 1.6;
+}
+
+.plans-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+	width: 100%;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+section {
+	margin-bottom: 60px;
+}
+
+section:last-child {
+	margin-bottom: 0;
+}
+
+@media (min-width: 2000px) {
+	main {
+		padding: 80px 60px;
+	}
+}
+
+@media (max-width: 1024px) {
+	main {
+		padding: 60px 30px;
+	}
+
+	h1 {
+		font-size: 2.5rem;
+		margin-bottom: 50px;
+	}
+
+	h2 {
+		font-size: 1.75rem;
+	}
+}
+
+/* Recommendation Section */
+.recommendation {
+	margin: 60px 0;
+}
+
+.recommendation-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 24px;
+	margin-top: 40px;
+}
+
+.recommendation-card {
+	background: linear-gradient(135deg, #f0f9ff 0%, #f5f3ff 100%);
+	padding: 32px;
+	border-radius: 12px;
+	border: 1px solid #e0e7ff;
+	text-align: left;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.recommendation-card h3 {
+	font-size: 1.25rem;
+	color: #111827;
+	margin: 0;
+	font-weight: 600;
+}
+
+.recommendation-card p {
+	color: #6b7280;
+	margin: 0;
+	line-height: 1.6;
+	font-size: 0.95rem;
+}
+
+.rec-link {
+	color: #1e40af;
+	font-weight: 600;
+	text-decoration: none;
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	transition: all 0.2s ease;
+	margin-top: 8px;
+	font-size: 0.95rem;
+}
+
+.rec-link:hover {
+	color: #1a3a9c;
+	transform: translateX(2px);
+}
+
+/* Getting Started Section */
+.getting-started {
+	margin: 60px 0;
+}
+
+.steps-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	gap: 24px;
+	margin-top: 40px;
+}
+
+.step {
+	text-align: center;
+	padding: 20px;
+}
+
+.step-number {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 60px;
+	height: 60px;
+	background: #1e40af;
+	color: #ffffff;
+	font-size: 1.75rem;
+	font-weight: 700;
+	border-radius: 50%;
+	margin-bottom: 16px;
+}
+
+.step h3 {
+	font-size: 1.1rem;
+	color: #111827;
+	margin: 12px 0;
+}
+
+.step p {
+	color: #6b7280;
+	font-size: 0.95rem;
+	line-height: 1.6;
+	margin: 0;
+}
+
+/* Testimonials Section */
+.testimonials {
+	margin: 60px 0;
+}
+
+.testimonials-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 24px;
+	margin-top: 40px;
+}
+
+.testimonial-card {
+	background: #ffffff;
+	padding: 32px;
+	border-radius: 12px;
+	border-left: 4px solid #1e40af;
+	box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.testimonial-text {
+	font-size: 1rem;
+	color: #475569;
+	line-height: 1.8;
+	margin: 0 0 16px 0;
+	font-style: italic;
+}
+
+.testimonial-author {
+	color: #6b7280;
+	font-size: 0.9rem;
+	margin: 0;
+}
+
+@media (max-width: 768px) {
+	main {
+		padding: 50px 20px;
+	}
+	
+	h1 {
+		font-size: 2rem;
+		margin-bottom: 40px;
+	}
+
+	h2 {
+		font-size: 1.5rem;
+	}
+
+	p {
+		font-size: 0.95rem;
+	}
+	
+	.plans-container {
+		grid-template-columns: 1fr;
+		gap: 16px;
+	}
+
+	.recommendation-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.steps-container {
+		grid-template-columns: 1fr;
+	}
+
+	.testimonials-grid {
+		grid-template-columns: 1fr;
+	}
+}
+</style>

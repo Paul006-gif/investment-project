@@ -1,0 +1,295 @@
+---
+import Header from '../components/Header.astro';
+import FeatureCards from '../components/FeatureCards.astro';
+import TeamSection from '../components/TeamSection.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>About Us - Horixon Wealth</title>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<section class="about-hero">
+				<img src="/about.jpg" alt="About Us" class="about-hero-image" />
+				<div class="about-content">
+					<div class="about-heading">
+						<h1>About Horizon Wealth</h1>
+					</div>
+					<div class="about-text">
+						<p>Horizon-wealth is an automatic online investment platform established by a team of professional traders focusing mainly on crypto currency trading over multiple exchanges and market.</p>
+						<p>Adding value to the team of like-minded businessmen specializing in real-estate and mineral mining. Our company has been growing fast by expanding trade industry and mining techniques, and rolling out more elite traders and miners respectively. Horizon-wealth is helping to educate, provide service for, secure, protect and ultimately profit from this emerging industry. Anyone all over the world can join Horizon-wealth and begin earning passive income by taking advantage of our expertise in mineral mining and crypto currency trading.</p>
+					</div>
+				</div>
+			</section>
+			
+			<section class="cards-section">
+				<div class="card-container">
+					<div class="card card-blue">
+						<div class="card-content">
+							<h3>Vision</h3>
+							<p>The goal of Horizon-wealth is to provide its users a unique, safe and secured platform for their investments in the field of crypto currency. This is why we have used cutting-edge platform with extensive infrastructure intended to make things more convenient.</p>
+						</div>
+					</div>
+					<div class="card card-blue">
+						<div class="card-content">
+							<h3>Mission</h3>
+							<p>Due to this technology, our platform is able to make possible of providing real and steady profits on an ongoing daily basis.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			
+			<section class="card-image-section">
+				<div class="card-image-content">
+					<div class="card-image-left">
+						<img src="/card.png" alt="Card" class="card-image" />
+					</div>
+					<div class="card-image-right">
+						<h2>Our Card</h2>
+						<p>The partnership aims to fill a gap in the traditional financial system that has left many without access to essential banking products. According to a 2017 survey by the FDIC, 25 percent of U.S. households are unbanked or underbanked, while global numbers have reached a staggering 1.7 billion, according to data released by the World Bank. Through BlockCard, Horizon-wealth investors can have a virtual card issued to them while a physical card is mailed to them. The card has a minimum of $1000 balance needed. It can be used at over 45 million merchants and ATMs – anywhere in the world where major credit cards are accepted.</p>
+					</div>
+				</div>
+			</section>
+			
+			<section class="why-choose-section">
+				<h2>Why Choose Us</h2>
+			</section>
+			
+			<FeatureCards cards={[
+				{ title: "24/7 Support", description: "Our customers care service is available at all time to attend to you and also offer profitable advice on the best investment programs.", icon: "" },
+				{ title: "Secured Transactions", description: "Your financial future is secured thro our multiple investment packages that are suitable for  every class.", icon: "" },
+				{ title: "Quick Returns", description: "We offer you an unbeatable interest on your inves within the shortest possible time", icon: "" },
+				{ title: "Our knowledge", description: "The teams of technicians  horizon-wealth and the company's financial department mini key cryptocurrency market trends We are studying the process of mining and search the state that will optimize costs and reduce net cost of cryptocurrencies and stocks.", icon: "" }
+			]} />
+			
+			<TeamSection />
+			
+			<Footer />
+		</main>
+		<button id="scrollToTop" class="scroll-to-top">↑</button>
+	</body>
+</html>
+
+<script>
+	function scrollToTop() {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth'
+		});
+	}
+
+	function toggleScrollButton() {
+		const scrollButton = document.getElementById('scrollToTop');
+		if (scrollButton) {
+			if (window.pageYOffset > 300) {
+				scrollButton.style.display = 'block';
+			} else {
+				scrollButton.style.display = 'none';
+			}
+		}
+	}
+
+	// Initialize when DOM is ready
+	document.addEventListener('DOMContentLoaded', () => {
+		const scrollButton = document.getElementById('scrollToTop');
+		if (scrollButton) {
+			scrollButton.addEventListener('click', scrollToTop);
+			
+			// Hide initially
+			scrollButton.style.display = 'none';
+			
+			// Show/hide on scroll
+			window.addEventListener('scroll', toggleScrollButton);
+			
+			// Check initial scroll position
+			toggleScrollButton();
+		}
+	});
+</script>
+
+<style>
+	.about-hero {
+		padding: 20px 20px;
+		width: auto;
+		min-height: 100vh;
+		display: flex;
+		align-items: flex-start;
+		gap: 60px;
+		margin: 0 150px;
+	}
+
+	.about-hero-image {
+		max-width: 700px;
+		width: 100%;
+		height: auto;
+		border-radius: 40px;
+		transform: none;
+		display: block;
+		margin: 0;
+		flex-shrink: 0;
+	}
+
+	.about-content {
+		width: auto;
+		flex: 1;
+		margin-top: 100px;
+	}
+
+	.about-heading {
+		position: relative;
+		z-index: 10;
+		background: white;
+		padding: 10px 0;
+		margin-bottom: 20px;
+		width: auto;
+	}
+
+	header {
+		position: sticky;
+		top: 0;
+		z-index: 100;
+	}
+
+	.about-heading h1 {
+		font-size: 3rem;
+		font-weight: 700;
+		color: #000000;
+		margin: 0;
+		text-align: left;
+		width: auto;
+	}
+
+	.about-text p {
+		font-size: 1.2rem;
+		line-height: 1.6;
+		color: #333333;
+		margin: 0;
+		text-align: left;
+		width: auto;
+		word-wrap: break-word;
+		overflow-wrap: break-word;
+		white-space: normal;
+	}
+
+	html, body {
+		height: 100%;
+		margin: 0;
+		padding: 0;
+	}
+
+	main {
+		min-height: 100vh;
+	}
+
+	.cards-section {
+		width: 100%;
+		padding: 0;
+		background: #f8fafc;
+	}
+
+	.card-container {
+		display: flex;
+		width: 100%;
+		gap: 0;
+	}
+
+	.card {
+		flex: 1;
+		width: 50%;
+		padding: 40px;
+		height: 400px;
+	}
+
+	.card-blue {
+		background: #1e40af;
+		color: white;
+		transition: all 0.3s ease;
+		cursor: pointer;
+	}
+
+	.card-blue:hover {
+		background: white;
+		color: #1e40af;
+	}
+
+	.card-content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		text-align: center;
+	}
+
+	.card-content h3 {
+		font-size: 2.5rem;
+		font-weight: 700;
+		margin-bottom: 1.5rem;
+	}
+
+	.card-content p {
+		font-size: 1.3rem;
+		font-weight: 600;
+		line-height: 1.6;
+		max-width: 90%;
+		margin: 0;
+	}
+
+	.card-image-section {
+		padding: 60px 250px;
+	}
+
+	.card-image-content {
+		display: flex;
+		align-items: center;
+		gap: 5px;
+	}
+
+	.card-image-left {
+		flex: 1;
+	}
+
+	.card-image-right {
+		flex: 1;
+	}
+
+	.card-image {
+		max-width: 100%;
+		height: auto;
+		border-radius: 20px;
+	}
+
+	.card-image-right h2 {
+		font-size: 2.5rem;
+		font-weight: 700;
+		color: #000000;
+		margin: 0 0 1.5rem 0;
+	}
+
+	.card-image-right p {
+		font-size: 1.1rem;
+		line-height: 1.6;
+		color: #333333;
+		margin: 0;
+	}
+
+	.why-choose-section {
+		padding: 60px 250px;
+		text-align: center;
+	}
+
+	.why-choose-section h2 {
+		font-size: 2.5rem;
+		font-weight: 700;
+		color: #000000;
+		margin: 0;
+	}
+</style>

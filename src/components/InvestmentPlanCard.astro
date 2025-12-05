@@ -1,0 +1,302 @@
+---
+export interface Props {
+	planName: string;
+	profitRate: string;
+	minInvestment: string;
+	maxInvestment?: string;
+	profitDuration?: string;
+	riskLevel?: string;
+	suitableFor?: string;
+	strategyIncludes?: string[];
+	dailyProfit?: string;
+	hourlyProfit?: string;
+	profitWithdrawal: string;
+	capitalWithdrawal: string;
+	referralBonus: string;
+	duration: string;
+	buttonText: string;
+}
+
+const { 
+	planName, 
+	profitRate, 
+	minInvestment, 
+	maxInvestment, 
+	profitDuration,
+	riskLevel,
+	suitableFor,
+	strategyIncludes,
+	dailyProfit,
+	hourlyProfit,
+	profitWithdrawal, 
+	capitalWithdrawal, 
+	referralBonus, 
+	duration, 
+	buttonText 
+}: Props = Astro.props;
+---
+
+<div class="investment-plan-card">
+	<div class="plan-header">
+		<h3 class="plan-name">{planName}</h3>
+		<div class="profit-rate">{profitRate}</div>
+	</div>
+	
+	<div class="plan-details">
+		<div class="detail-row">
+			<span class="detail-label">Min Investment:</span>
+			<span class="detail-value">{minInvestment}</span>
+		</div>
+		
+		{maxInvestment && (
+			<div class="detail-row">
+				<span class="detail-label">Max Investment:</span>
+				<span class="detail-value">{maxInvestment}</span>
+			</div>
+		)}
+		
+		{profitDuration && (
+			<div class="detail-row">
+				<span class="detail-label">Profit After:</span>
+				<span class="detail-value">{profitDuration}</span>
+			</div>
+		)}
+
+		{riskLevel && (
+			<div class="detail-row">
+				<span class="detail-label">Risk Level:</span>
+				<span class="detail-value">{riskLevel}</span>
+			</div>
+		)}
+
+		{suitableFor && (
+			<div class="detail-row">
+				<span class="detail-label">Suitable For:</span>
+				<span class="detail-value">{suitableFor}</span>
+			</div>
+		)}
+		
+		{dailyProfit && (
+			<div class="detail-row">
+				<span class="detail-label">Daily Profit:</span>
+				<span class="detail-value">{dailyProfit}</span>
+			</div>
+		)}
+		
+		{hourlyProfit && (
+			<div class="detail-row">
+				<span class="detail-label">Hourly Profit:</span>
+				<span class="detail-value">{hourlyProfit}</span>
+			</div>
+		)}
+		
+		<div class="detail-row">
+			<span class="detail-label">Profit Withdrawal:</span>
+			<span class="detail-value">{profitWithdrawal}</span>
+		</div>
+		
+		<div class="detail-row">
+			<span class="detail-label">Capital Withdrawal:</span>
+			<span class="detail-value">{capitalWithdrawal}</span>
+		</div>
+		
+		{referralBonus !== "N/A" && (
+			<div class="detail-row">
+				<span class="detail-label">Referral Bonus:</span>
+				<span class="detail-value">{referralBonus}</span>
+			</div>
+		)}
+		
+		<div class="detail-row">
+			<span class="detail-label">Duration:</span>
+			<span class="detail-value">{duration}</span>
+		</div>
+	</div>
+
+	{strategyIncludes && strategyIncludes.length > 0 && (
+		<div class="strategy-section">
+			<h4 class="strategy-title">Strategy Includes:</h4>
+			<ul class="strategy-list">
+				{strategyIncludes.map((item) => (
+					<li>{item}</li>
+				))}
+			</ul>
+		</div>
+	)}
+	
+	<button class="plan-button">{buttonText}</button>
+</div>
+
+<style>
+	.investment-plan-card {
+		background: #ffffff;
+		border-radius: 16px;
+		padding: 18px;
+		width: 380px;
+		max-width: 100%;
+		box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+		border: 1px solid #f0f0f0;
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		transition: all 0.3s ease;
+		flex-shrink: 0;
+	}
+
+	.investment-plan-card:hover {
+		box-shadow: 0 25px 50px rgba(15, 23, 42, 0.12);
+		border-color: #1e40af;
+		transform: translateY(-2px);
+	}
+	
+	.plan-header {
+		text-align: left;
+		padding-bottom: 12px;
+		border-bottom: 2px solid #f5f5f5;
+	}
+	
+	.plan-name {
+		font-size: 1.1rem;
+		font-weight: 700;
+		color: #111827;
+		margin: 0 0 4px 0;
+		text-transform: capitalize;
+		line-height: 1.3;
+	}
+	
+	.profit-rate {
+		font-size: 2rem;
+		font-weight: 700;
+		color: #1e40af;
+		margin: 0;
+	}
+	
+	.plan-details {
+		margin-bottom: 4px;
+		flex-grow: 1;
+	}
+	
+	.detail-row {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 12px;
+		padding: 8px 0;
+		border-bottom: 1px solid #f5f5f5;
+	}
+	
+	.detail-row:last-of-type {
+		border-bottom: none;
+	}
+	
+	.detail-label {
+		font-size: 0.8rem;
+		color: #6b7280;
+		font-weight: 500;
+	}
+	
+	.detail-value {
+		font-size: 0.8rem;
+		color: #111827;
+		font-weight: 600;
+		text-align: right;
+	}
+
+	.strategy-section {
+		padding: 10px 0;
+		border-top: 1px solid #f5f5f5;
+	}
+
+	.strategy-title {
+		font-size: 0.75rem;
+		font-weight: 600;
+		color: #111827;
+		margin: 0 0 6px 0;
+		text-transform: uppercase;
+		letter-spacing: 0.4px;
+	}
+
+	.strategy-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+	}
+
+	.strategy-list li {
+		font-size: 0.75rem;
+		color: #475569;
+		padding-left: 14px;
+		position: relative;
+		line-height: 1.4;
+	}
+
+	.strategy-list li::before {
+		content: "✓";
+		position: absolute;
+		left: 0;
+		color: #1e40af;
+		font-weight: bold;
+		font-size: 0.85rem;
+	}
+	
+	.plan-button {
+		width: 100%;
+		background: #1e40af;
+		color: #ffffff;
+		border: none;
+		padding: 10px 14px;
+		font-size: 0.95rem;
+		font-weight: 600;
+		border-radius: 9999px;
+		cursor: pointer;
+		transition: all 0.2s ease;
+		text-decoration: none;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+	}
+	
+	.plan-button:hover {
+		background: #1a3a9c;
+		transform: translateY(-1px);
+	}
+
+	.plan-button:active {
+		transform: translateY(0);
+	}
+	
+	@media (max-width: 1024px) {
+		.investment-plan-card {
+			padding: 16px;
+		}
+		
+		.plan-name {
+			font-size: 1rem;
+		}
+		
+		.profit-rate {
+			font-size: 1.8rem;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.investment-plan-card {
+			padding: 14px;
+		}
+		
+		.plan-name {
+			font-size: 0.95rem;
+		}
+		
+		.profit-rate {
+			font-size: 1.6rem;
+		}
+		
+		.detail-label,
+		.detail-value {
+			font-size: 0.75rem;
+		}
+	}
+</style>

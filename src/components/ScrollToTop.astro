@@ -1,0 +1,74 @@
+---
+// Scroll to top button component
+---
+
+<button id="scrollToTop" class="scroll-to-top">
+	↑
+</button>
+
+<script>
+	function scrollToTop() {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth'
+		});
+	}
+
+	function toggleScrollButton() {
+		const scrollButton = document.getElementById('scrollToTop');
+		if (scrollButton) {
+			if (window.pageYOffset > 300) {
+				scrollButton.style.display = 'block';
+			} else {
+				scrollButton.style.display = 'none';
+			}
+		}
+	}
+
+	// Initialize when DOM is ready
+	if (typeof window !== 'undefined') {
+		document.addEventListener('DOMContentLoaded', () => {
+			const scrollButton = document.getElementById('scrollToTop');
+			if (scrollButton) {
+				scrollButton.addEventListener('click', scrollToTop);
+				
+				// Hide initially
+				scrollButton.style.display = 'none';
+				
+				// Show/hide on scroll
+				window.addEventListener('scroll', toggleScrollButton);
+				
+				// Check initial scroll position
+				toggleScrollButton();
+			}
+		});
+	}
+</script>
+
+<style>
+	.scroll-to-top {
+		position: fixed;
+		bottom: 20px;
+		right: 20px;
+		background: #1e40af;
+		color: white;
+		border: none;
+		width: 50px;
+		height: 50px;
+		font-size: 20px;
+		font-weight: bold;
+		cursor: pointer;
+		z-index: 1000;
+		display: block;
+		transition: all 0.3s ease;
+	}
+
+	.scroll-to-top:hover {
+		background: #2563eb;
+		transform: translateY(-2px);
+	}
+
+	.scroll-to-top:active {
+		transform: translateY(0);
+	}
+</style>

@@ -1,0 +1,256 @@
+---
+import languageIcon from './icons/language.svg';
+import Services from './Services.astro';
+import LanguageModal from './LanguageModal.astro';
+
+const currentPath = Astro.url.pathname;
+---
+
+<header>
+	<div class="header-content">
+		<div class="nav-group">
+			<img src="/logo1.png" alt="Logo" />
+			<nav class="nav-tabs">
+				<a href="/" class={`tab ${currentPath === '/' ? 'active' : ''}`}>Home</a>
+				<a href="/about" class={`tab ${currentPath === '/about' ? 'active' : ''}`}>About Us</a>
+				<div class="dropdown">
+					<a href="/services" class={`tab dropdown-trigger ${currentPath === '/services' ? 'active' : ''}`}>Services</a>
+					<div class="dropdown-panel">
+						<Services />
+					</div>
+				</div>
+				<a href="/investment-plans" class={`tab ${currentPath === '/investment-plans' ? 'active' : ''}`}>Investment Plans</a>
+				<a href="/faqs" class={`tab ${currentPath === '/faqs' ? 'active' : ''}`}>FAQs</a>
+				<a href="/support" class={`tab ${currentPath === '/support' ? 'active' : ''}`}>Get Support</a>
+			</nav>
+		</div>
+		<div class="cta-group">
+			<div class="language-icon-container">
+				<div class="language-icon">
+					<img src={languageIcon.src} alt="Language" />
+				</div>
+				<LanguageModal />
+			</div>
+			<a href="/signin" class="btn btn-secondary">Sign In</a>
+			<a href="/signup" class="btn btn-primary">Sign Up</a>
+		</div>
+		<div class="dropdown-backdrop"></div>
+	</div>
+</header>
+
+<script>
+	// Show modal on hover
+	document.addEventListener('DOMContentLoaded', () => {
+		const container = document.querySelector('.language-icon-container');
+		const modal = document.querySelector('.language-modal');
+		
+		if (container && modal) {
+			container.addEventListener('mouseenter', () => {
+				modal.style.opacity = '1';
+				modal.style.pointerEvents = 'auto';
+			});
+			
+			// Keep modal open when hovering over modal itself
+			const hoverArea = container;
+			hoverArea.addEventListener('mouseleave', (e) => {
+				// Check if mouse is moving to modal or outside both
+				setTimeout(() => {
+					if (!container.matches(':hover') && !modal.matches(':hover')) {
+						modal.style.opacity = '0';
+						modal.style.pointerEvents = 'none';
+					}
+				}, 100);
+			});
+
+			// Close when leaving modal
+			modal.addEventListener('mouseleave', (e) => {
+				setTimeout(() => {
+					if (!container.matches(':hover') && !modal.matches(':hover')) {
+						modal.style.opacity = '0';
+						modal.style.pointerEvents = 'none';
+					}
+				}, 100);
+			});
+		}
+	});
+</script>
+
+<style>
+	header {
+		border-bottom: 1px solid #ece6e6ff;
+		height: 60px;
+		width: 100%;
+		position: sticky;
+		top: 0;
+		background-color: white;
+		z-index: 1000;
+	}
+	
+	.header-content {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 100%;
+		margin: 0 100px;
+	}
+
+	.nav-group {
+		display: flex;
+		align-items: center;
+		gap: 32px;
+	}
+
+	.cta-group {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+	}
+
+	.language-icon {
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		background-color: #f5f5f5;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: background-color 0.2s ease;
+	}
+
+	.language-icon img {
+		width: 20px;
+		height: 20px;
+	}
+
+	.language-icon-container {
+		position: relative;
+	}
+	
+	.nav-tabs {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+	}
+
+	.dropdown {
+		position: relative;
+	}
+
+	.dropdown-trigger {
+		display: inline-flex;
+	}
+
+	.dropdown-panel {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		opacity: 0;
+		pointer-events: none;
+		transform: translateY(-12px);
+		transition: opacity 0.2s ease, transform 0.2s ease;
+		z-index: 100;
+		padding-top: 16px;
+	}
+
+	.dropdown-panel::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 16px;
+	}
+
+	.dropdown:hover .dropdown-panel,
+	.dropdown:focus-within .dropdown-panel {
+		opacity: 1;
+		pointer-events: auto;
+		transform: translateY(0);
+	}
+
+	.dropdown:hover .dropdown-trigger,
+	.dropdown:focus-within .dropdown-trigger {
+		background-color: #f5f5f5;
+	}
+
+	.dropdown-backdrop {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(30, 64, 175, 0.05);
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.2s ease;
+		z-index: 50;
+	}
+
+	.dropdown:hover ~ .dropdown-backdrop,
+	.dropdown:focus-within ~ .dropdown-backdrop {
+		opacity: 1;
+		pointer-events: auto;
+	}
+	
+	.tab {
+		display: inline-flex;
+		align-items: center;
+		text-decoration: none;
+		color: #000;
+		font-weight: 600;
+		font-size: 1.125rem;
+		padding: 8px 16px;
+		border-radius: 9999px;
+		transition: background-color 0.2s ease;
+	}
+	
+	.tab:hover {
+		background-color: #f5f5f5;
+	}
+	
+	.tab.active {
+		background-color: #1e40af;
+		color: white;
+	}
+	
+	.tab.active:hover {
+		background-color: #1a3a9c;
+	}
+	
+	.btn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: 600;
+		font-size: 1.125rem;
+		padding: 10px 24px;
+		border-radius: 9999px;
+		text-decoration: none;
+		transition: background-color 0.2s ease, transform 0.2s ease;
+	}
+
+	.btn-primary {
+		background-color: #1e40af;
+		color: #fff;
+	}
+
+	.btn-primary:hover {
+		background-color: #1a3a9c;
+		transform: translateY(-1px);
+	}
+
+	.btn-secondary {
+		background-color: #f5f5f5;
+		color: #111827;
+	}
+
+	.btn-secondary:hover {
+		background-color: #e5e7eb;
+		transform: translateY(-1px);
+	}
+	
+	img {
+		height: 40px;
+		width: auto;
+	}
+</style>

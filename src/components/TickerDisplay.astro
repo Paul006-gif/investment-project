@@ -1,0 +1,108 @@
+---
+interface TickerData {
+  symbol: string;
+  price: string;
+  change: string;
+  volume: string;
+  high: string;
+  low: string;
+}
+
+interface Props {
+  tickers: TickerData[];
+}
+---
+
+<div class="ticker-container">
+  <div class="ticker-grid">
+    {tickers.map(ticker => (
+      <div class="ticker-card">
+        <div class="ticker-symbol">{ticker.symbol}</div>
+        <div class="ticker-price">${ticker.price}</div>
+        <div class={`ticker-change ${parseFloat(ticker.change) >= 0 ? 'positive' : 'negative'}`}>
+          {parseFloat(ticker.change) >= 0 ? '+' : ''}{ticker.change}%
+        </div>
+        <div class="ticker-details">
+          <span>H: ${ticker.high}</span>
+          <span>L: ${ticker.low}</span>
+          <span>V: ${ticker.volume}</span>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  .ticker-container {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .ticker-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .ticker-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .ticker-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: #cbd5e1;
+  }
+
+  .ticker-symbol {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #64748b;
+    margin-bottom: 8px;
+  }
+
+  .ticker-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 8px;
+  }
+
+  .ticker-change {
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .ticker-change.positive {
+    color: #10b981;
+  }
+
+  .ticker-change.negative {
+    color: #ef4444;
+  }
+
+  .ticker-details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: #94a3b8;
+  }
+
+  @media (max-width: 768px) {
+    .ticker-grid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+    
+    .ticker-container {
+      padding: 20px 15px;
+    }
+  }
+</style>

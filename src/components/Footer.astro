@@ -1,0 +1,219 @@
+---
+// Footer component with blue background
+---
+
+<footer class="footer">
+	<div class="footer-content">
+		<div class="footer-grid">
+			<div class="footer-column">
+				<h3 class="footer-heading">Quick Links</h3>
+				<ul class="footer-links">
+					<li><a href="#" class="footer-link">Sign Up</a></li>
+					<li><a href="#" class="footer-link">Sign In</a></li>
+					<li><a href="#" class="footer-link">Investment Plans</a></li>
+					<li><a href="#" class="footer-link">Where to Buy Bitcoin</a></li>
+				</ul>
+			</div>
+			<div class="footer-column">
+				<h3 class="footer-heading">Company</h3>
+				<ul class="footer-links">
+					<li><a href="#" class="footer-link">Home</a></li>
+					<li><a href="#" class="footer-link">About Us</a></li>
+					<li><a href="#" class="footer-link">Our Services</a></li>
+					<li><a href="#" class="footer-link">FAQs</a></li>
+				</ul>
+			</div>
+			<div class="footer-column">
+				<h3 class="footer-heading">Legal</h3>
+				<ul class="footer-links">
+					<li><a href="#" class="footer-link">Legal Information</a></li>
+					<li><a href="#" class="footer-link">Privacy Policy</a></li>
+					<li><a href="#" class="footer-link">Report Abuse</a></li>
+					<li><a href="#" class="footer-link">Terms of Services</a></li>
+				</ul>
+			</div>
+			<div class="footer-column">
+				<h3 class="footer-heading">Support</h3>
+				<ul class="footer-links">
+					<li><a href="#" class="footer-link">Contact</a></li>
+					<li><a href="#" class="footer-link">Knowledge Base</a></li>
+					<li><a href="#" class="footer-link">System Status</a></li>
+					<li><a href="#" class="footer-link">FAQs</a></li>
+				</ul>
+			</div>
+			<div class="footer-column">
+				<h3 class="footer-heading">Location</h3>
+				<ul class="footer-links">
+					<li><span class="footer-text">Visit us at</span></li>
+					<li><span class="footer-text">123 Financial District, Suite 1000</span></li>
+					<li><span class="footer-text">New York, NY 10004</span></li>
+					<li><span class="footer-text">United States</span></li>
+				</ul>
+			</div>
+		</div>
+		<div class="footer-border"></div>
+		<div class="footer-copyright">
+			<div class="copyright-content">
+				<p>&copy; <span id="current-year"></span> Horixon Wealth. All rights reserved.</p>
+				<div class="footer-right">
+					<div class="copyright-links">
+						<a href="#" class="copyright-link">Privacy Policy</a>
+						<span class="separator">•</span>
+						<a href="#" class="copyright-link">Terms & Conditions</a>
+					</div>
+					<div class="language-display">
+						<span class="language-text">English</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<script>
+	// Set current year dynamically
+	document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
+
+<style>
+	.footer {
+		background: linear-gradient(135deg, #1e40af, #2563eb);
+		padding: 60px 20px 40px;
+		width: 100%;
+		box-sizing: border-box;
+		overflow-x: hidden;
+		margin: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		position: relative;
+	}
+
+	.footer-content {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.footer-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 2rem;
+		align-items: start;
+		justify-content: space-between;
+	}
+
+	.footer-column {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: flex-start;
+		min-height: 100%;
+	}
+
+	.footer-heading {
+		color: white;
+		font-size: 1.2rem;
+		font-weight: 600;
+		margin-bottom: 1.5rem;
+		letter-spacing: 0.5px;
+	}
+
+	.footer-links {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.footer-link {
+		color: rgba(255, 255, 255, 0.8);
+		text-decoration: none;
+		font-size: 0.95rem;
+		transition: color 0.3s ease;
+		line-height: 1.4;
+	}
+
+	.footer-link:hover {
+		color: white;
+	}
+
+	.footer-text {
+		color: rgba(255, 255, 255, 0.8);
+		font-size: 0.95rem;
+		line-height: 1.4;
+	}
+
+	.footer-border {
+		height: 1px;
+		background: rgba(255, 255, 255, 0.2);
+		margin: 2rem 0 1rem;
+		width: 100%;
+	}
+
+	.footer-copyright {
+		text-align: left;
+		padding: 1rem 0 0;
+	}
+
+	.copyright-content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 1rem;
+	}
+
+	.footer-right {
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+		flex-wrap: wrap;
+	}
+
+	.footer-copyright p {
+		color: rgba(255, 255, 255, 0.7);
+		font-size: 0.9rem;
+		margin: 0;
+		line-height: 1.4;
+	}
+
+	.copyright-links {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	.copyright-link {
+		color: rgba(255, 255, 255, 0.7);
+		text-decoration: none;
+		font-size: 0.9rem;
+		transition: color 0.3s ease;
+	}
+
+	.copyright-link:hover {
+		color: white;
+	}
+
+	.separator {
+		color: rgba(255, 255, 255, 0.4);
+		font-size: 0.8rem;
+	}
+
+	.language-display {
+		display: flex;
+		align-items: center;
+		color: rgba(255, 255, 255, 0.8);
+		font-size: 0.85rem;
+	}
+
+	.language-text {
+		font-weight: 500;
+	}
+
+	body {
+		margin: 0;
+		padding: 0;
+	}
+</style>

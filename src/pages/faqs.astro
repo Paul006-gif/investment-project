@@ -1,0 +1,314 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>FAQs - Horixon Wealth</title>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<section class="faqs-hero">
+				<h1>Frequently Asked Questions</h1>
+			</section>
+			
+			<section class="faqs-content">
+				<div class="faq-list">
+					<div class="faq-divider"></div>
+					
+					<div class="faq-item">
+						<button class="faq-question" onclick="toggleFAQ(this)">
+							<span>What is Horixon Wealth and how does it work?</span>
+							<span class="faq-icon">+</span>
+						</button>
+						<div class="faq-answer">
+							<p>Horixon Wealth is a comprehensive investment platform that provides access to various financial products including cryptocurrency investments, traditional stocks, and managed investment packages. Our platform uses advanced technology to help investors make informed decisions while offering competitive returns on investments.</p>
+						</div>
+					</div>
+					
+					<div class="faq-divider"></div>
+					
+					<div class="faq-item">
+						<button class="faq-question" onclick="toggleFAQ(this)">
+							<span>How do I get started with investing?</span>
+							<span class="faq-icon">+</span>
+						</button>
+						<div class="faq-answer">
+							<p>Getting started is easy! Simply create an account, complete the verification process, deposit funds into your account, and choose from our available investment packages. Our team is available 24/7 to guide you through the process and help you select the best investment options based on your financial goals.</p>
+						</div>
+					</div>
+					
+					<div class="faq-divider"></div>
+					
+					<div class="faq-item">
+						<button class="faq-question" onclick="toggleFAQ(this)">
+							<span>What is horizon-wealth?</span>
+							<span class="faq-icon">+</span>
+						</button>
+						<div class="faq-answer">
+							<p>horizon-wealth our company provides a full investment service focused on the mining, cryptocurrency and stock market We are among the best platforms to invest and grow your online assets</p>
+						</div>
+					</div>
+					
+					<div class="faq-divider"></div>
+					
+					<div class="faq-item">
+						<button class="faq-question" onclick="toggleFAQ(this)">
+							<span>How do I create my account?</span>
+							<span class="faq-icon">+</span>
+						</button>
+						<div class="faq-answer">
+							<p>Registration process is very easy and will take a few moments to complete simply SIGN-UP button and fill in all the required fields.</p>
+						</div>
+					</div>
+					
+					<div class="faq-divider"></div>
+					
+					<div class="faq-item">
+						<button class="faq-question" onclick="toggleFAQ(this)">
+							<span>How do I make deposits?</span>
+							<span class="faq-icon">+</span>
+						</button>
+						<div class="faq-answer">
+							<p>To deposit funds in your trading account is quick and simple For your convenience you may choose one of the several available deposit methods To make a successful deposit please follow the steps below Login to your account Click on the DEPOSITS button in the DASHBOARD section Choose the deposit option And follow the steps to complete your transaction</p>
+						</div>
+					</div>
+					
+					<div class="faq-divider"></div>
+					
+					<div class="faq-item">
+						<button class="faq-question" onclick="toggleFAQ(this)">
+							<span>How long does my deposit take before it can reflect on my Horizon-wealth account dashboard?</span>
+							<span class="faq-icon">+</span>
+						</button>
+						<div class="faq-answer">
+							<p>Your deposit will be reflected immediately once it is confirmed on the blockchain network</p>
+						</div>
+					</div>
+					
+					<div class="faq-divider"></div>
+					
+					<div class="faq-item">
+						<button class="faq-question" onclick="toggleFAQ(this)">
+							<span>How do I make withdrawal?</span>
+							<span class="faq-icon">+</span>
+						</button>
+						<div class="faq-answer">
+							<p>To make a withdrawal request click the WITHDRAW button at the top center of your Horizon-wealth account dashboard and input the required details to withdraw</p>
+						</div>
+					</div>
+					
+					<div class="faq-divider"></div>
+					
+					<div class="faq-item">
+						<button class="faq-question" onclick="toggleFAQ(this)">
+							<span>How long does it take take to process my withdrawal?</span>
+							<span class="faq-icon">+</span>
+						</button>
+						<div class="faq-answer">
+							<p>Once we receive your withdrawal request we process immediately and send to your wallet</p>
+						</div>
+					</div>
+					
+					<div class="faq-divider"></div>
+					
+					<div class="faq-item">
+						<button class="faq-question" onclick="toggleFAQ(this)">
+							<span>Is the company properly registered?</span>
+							<span class="faq-icon">+</span>
+						</button>
+						<div class="faq-answer">
+							<p>Yes we are officially and properly registered company house with the name Horizon -wealth LTD</p>
+						</div>
+					</div>
+					
+					<div class="faq-divider"></div>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.faqs-hero {
+		padding: 100px 20px 60px 20px;
+		text-align: center;
+	}
+
+	.faqs-hero h1 {
+		font-size: 3rem;
+		font-weight: 700;
+		color: #000000;
+		margin: 0;
+	}
+
+	.faqs-content {
+		padding: 0 20px 100px 20px;
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.faq-list {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.faq-item {
+		background: transparent;
+		padding: 0;
+	}
+
+	.faq-divider {
+		width: 100%;
+		height: 1px;
+		background: #e2e8f0;
+		margin: 2px 0 8px 0;
+		position: relative;
+	}
+
+	.faq-divider::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 1px;
+		background: #cbd5e1;
+	}
+
+	.faq-question {
+		width: 100%;
+		background: none;
+		border: none;
+		padding: 10px 25px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		cursor: pointer;
+		font-size: 1.1rem;
+		font-weight: 600;
+		color: #000000;
+		text-align: left;
+		text-decoration: none;
+		position: relative;
+	}
+
+	.faq-question span:first-child {
+		position: relative;
+	}
+
+	.faq-question span:first-child::after {
+		content: '';
+		position: absolute;
+		bottom: -2px;
+		left: 0;
+		right: 0;
+		height: 1px;
+		background: #1e40af;
+		transform: scaleX(0);
+		transition: transform 0.3s ease;
+	}
+
+	.faq-question:hover span:first-child::after {
+		transform: scaleX(1);
+	}
+
+	.faq-icon {
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: #1e40af;
+		transition: transform 0.3s ease;
+	}
+
+	.faq-question.active .faq-icon {
+		transform: rotate(45deg);
+	}
+
+	.faq-answer {
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.3s ease, padding 0.3s ease;
+	}
+
+	.faq-answer.active {
+		max-height: 250px;
+		padding: 0 25px 10px 25px;
+	}
+
+	.faq-answer p {
+		color: #666666;
+		line-height: 1.6;
+		margin: 0;
+	}
+
+	@media (max-width: 768px) {
+		.faqs-hero {
+			padding: 60px 20px 40px 20px;
+		}
+		
+		.faqs-hero h1 {
+			font-size: 2rem;
+		}
+		
+		.faqs-content {
+			padding: 0 20px 60px 20px;
+		}
+		
+		.faq-question {
+			padding: 15px 20px;
+			font-size: 1rem;
+		}
+		
+		.faq-answer.active {
+			padding: 0 20px 15px 20px;
+		}
+	}
+</style>
+
+<script>
+	/**
+	 * Toggle FAQ answer visibility
+	 * @param {HTMLButtonElement} button - The FAQ question button
+	 */
+	// @ts-ignore
+	window.toggleFAQ = function(button) {
+		console.log('FAQ clicked'); // Debug log
+		const answer = button.nextElementSibling;
+		console.log('Answer element:', answer); // Debug log
+		const isActive = button.classList.contains('active');
+		console.log('Is active:', isActive); // Debug log
+		
+		// Close all other FAQs
+		document.querySelectorAll('.faq-question').forEach(q => {
+			q.classList.remove('active');
+			const nextElement = q.nextElementSibling;
+			if (nextElement) {
+				nextElement.classList.remove('active');
+			}
+		});
+		
+		// Toggle current FAQ
+		if (!isActive) {
+			button.classList.add('active');
+			answer.classList.add('active');
+			console.log('Added active classes'); // Debug log
+		}
+	};
+
+	// Initialize when DOM is ready
+	document.addEventListener('DOMContentLoaded', function() {
+		console.log('DOM loaded'); // Debug log
+		// Make sure all FAQ answers are initially hidden
+		document.querySelectorAll('.faq-answer').forEach(answer => {
+			answer.classList.remove('active');
+		});
+		console.log('FAQs initialized'); // Debug log
+	});
+</script>

@@ -1,5 +1,10 @@
 ---
-
+import Header from '../components/Header.astro';
+import TickerDisplay from '../components/TickerDisplay.astro';
+import StockTable from '../components/StockTable.astro';
+import ForexTable from '../components/ForexTable.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
 ---
 
 <html lang="en">
@@ -11,6 +16,799 @@
 		<title>Astro</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<Header />
+		<main>
+			<section class="hero">
+				<div class="hero-content">
+					<div class="hero-text">
+						<p class="hero-motto">Building Wealth<br>Beyond Borders</p>
+						<p class="hero-sub-motto">The investment climate is changing, and investors need to create financial legacies that will stand the test of time. As the largest digital currency asset manager, horizon-wealth helps investors access the ever-evolving digital economy to build their future in the present.</p>
+						<a href="/get-started" class="btn btn-primary">Get Started</a>
+					</div>
+					<video 
+						src="/USD Mockup_WebM.webm" 
+						autoplay 
+						muted 
+						loop 
+						playsinline
+						class="hero-video"
+					></video>
+				</div>
+			</section>
+			<section class="financial-markets-section">
+				<h1 class="financial-markets-heading">Financial Markets</h1>
+			</section>
+			<section class="tickers-section">
+				<div id="ticker-container"></div>
+			</section>
+			<section class="what-we-do-section">
+				<h1 class="what-we-do-heading">Our Core Services.</h1>
+				<div class="realestate-content">
+					<div class="realestate-text">
+						<h2>Real estate</h2>
+						<p class="realestate-description">
+							Real estate is a $217 trillion-dollar market making up almost 60% of all global wealth. It's the largest source of wealth, yet it is illiquid for 99% of the world today. In the past, you only had access to real estate if you were rich or had rich friends–meaning that most people weren't able to benefit from the passive income and capital appreciation it provides.. Today, Phemex-ventures cut out the expensive middle man and provide access for investors, by investing in shares of real estate using crypto currencies.
+						</p>
+						<button class="explore-btn">Explore</button>
+					</div>
+					<img src="/realestate.jpg" alt="Real Estate" class="realestate-image">
+				</div>
+			</section>
+			<section class="mining-section">
+				<div class="mining-content">
+					<img src="/mining.jpg" alt="Mining" class="mining-image">
+					<div class="mining-text">
+						<h2>Mining</h2>
+						<p class="mining-description">
+							Unlock the potential of cryptocurrency mining with our state-of-the-art infrastructure. We provide access to premium mining operations with optimized energy efficiency and maximum profitability. Join the digital gold rush and earn passive income through our carefully curated mining portfolios.
+						</p>
+						<button class="explore-btn">Explore</button>
+					</div>
+				</div>
+			</section>
+			<section class="stockmarket-section">
+				<div class="stockmarket-content">
+					<div class="stockmarket-text">
+						<h2>Stock Market</h2>
+						<p class="stockmarket-description">
+							Navigate the global financial markets with confidence through our expert-curated investment strategies. Access traditional and emerging markets with cutting-edge analytics and professional portfolio management. Build wealth through diversified stock investments tailored to your financial goals.
+						</p>
+						<button class="explore-btn">Explore</button>
+					</div>
+					<img src="/stockmarket.jpg" alt="Stock Market" class="stockmarket-image">
+				</div>
+			</section>
+			<section class="crypto-section">
+				<div class="crypto-content">
+					<img src="/crypto.jpg" alt="Crypto Market" class="crypto-image">
+					<div class="crypto-text">
+						<h2>Crypto Market</h2>
+						<p class="crypto-description">
+							Enter the revolutionary world of digital assets with our comprehensive cryptocurrency investment platform. Access Bitcoin, Ethereum, and thousands of altcoins with advanced trading tools, secure custody solutions, and expert market analysis. Capitalize on the future of finance through strategic crypto investments.
+						</p>
+						<button class="explore-btn">Explore</button>
+					</div>
+				</div>
+			</section>
+			<section class="cta-section">
+				<div class="cta-content">
+					<h2 class="cta-heading">Ready to Start Your Investment Journey?</h2>
+					<p class="cta-description">
+						Join thousands of investors who have already discovered the power of diversified investment strategies. Take control of your financial future today.
+					</p>
+					<button class="cta-btn">Get Started Now</button>
+				</div>
+			</section>
+			<section class="trades-section">
+				<h1 class="trades-heading">Find your trades</h1>
+				<div class="switch-container">
+					<div class="switch-buttons">
+						<button class="switch-btn active" data-tab="forex">Forex</button>
+						<button class="switch-btn" data-tab="stock">Stock</button>
+					</div>
+				</div>
+				<div class="tab-content">
+					<div class="tab-pane active" id="forex">
+						<ForexTable />
+					</div>
+					<div class="tab-pane" id="stock">
+						<StockTable />
+					</div>
+				</div>
+			</section>
+			<section class="testimonials-section">
+				<div class="testimonials-container">
+					<h2 class="testimonials-heading">What our clients say about us</h2>
+					<div class="testimonials-grid">
+						<div class="testimonial-card">
+							<div class="testimonial-content">
+								<p class="testimonial-text">
+									"The platform has transformed my investment strategy. The real-time data and comprehensive market analysis have helped me make informed decisions that consistently outperform the market."
+								</p>
+								<div class="testimonial-author">
+									<div class="author-avatar" style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #1e40af, #3b82f6); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 1.2rem;">
+										SJ
+									</div>
+									<div class="author-info">
+										<h4 class="author-name">Sarah Johnson</h4>
+										<p class="author-title">Portfolio Manager</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="testimonial-card">
+							<div class="testimonial-content">
+								<p class="testimonial-text">
+									"As a day trader, I need reliable data and fast execution. This platform delivers both. The forex and stock tables give me everything I need at a glance."
+								</p>
+								<div class="testimonial-author">
+									<div class="author-avatar" style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #dc2626, #ef4444); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 1.2rem;">
+										MC
+									</div>
+									<div class="author-info">
+										<h4 class="author-name">Michael Chen</h4>
+										<p class="author-title">Day Trader</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="testimonial-card">
+							<div class="testimonial-content">
+								<p class="testimonial-text">
+									"The educational resources combined with powerful trading tools have helped me grow from a beginner to a confident investor. Highly recommended for anyone serious about trading."
+								</p>
+								<div class="testimonial-author">
+									<div class="author-avatar" style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #059669, #10b981); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 1.2rem;">
+										ER
+									</div>
+									<div class="author-info">
+										<h4 class="author-name">Emily Rodriguez</h4>
+										<p class="author-title">Investment Analyst</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<Footer />
+		<button id="scrollToTop" class="scroll-to-top">↑</button>
 	</body>
 </html>
+
+<style>
+	.hero {
+		padding: 40px 100px 80px;
+	}
+  
+	.hero-content {
+		display: flex;
+		align-items: flex-start;
+		gap: 100px;
+	}
+
+	.hero-text {
+		flex: 1;
+		max-width: 45%;
+		margin-top: 60px;
+		margin-left: 150px;
+	}
+
+	.hero-motto {
+		font-size: 6rem;
+		font-weight: 400;
+		margin: 0 0 20px 0;
+		color: #000;
+		line-height: 1.2;
+	}
+
+	.hero-sub-motto {
+		font-size: 1.125rem;
+		font-weight: 400;
+		margin: 0 0 30px 0;
+		color: #64748b;
+		line-height: 1.6;
+		max-width: 600px;
+	}
+
+	.btn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 16px 32px;
+		border-radius: 9999px;
+		text-decoration: none;
+		font-weight: 600;
+		font-size: 1.125rem;
+		transition: all 0.2s ease;
+		cursor: pointer;
+		border: none;
+	}
+
+	.btn-primary {
+		background-color: #1e40af;
+		color: white;
+	}
+
+	.btn-primary:hover {
+		background-color: #1d4ed8;
+	}
+
+	.hero-video {
+		width: 500px;
+		height: auto;
+		border-radius: 12px;
+		margin-left: 100px;
+	}
+
+	.financial-markets-section {
+		text-align: center;
+		padding: 20px 0 0;
+		margin-top: -40px;
+	}
+
+	.financial-markets-heading {
+		font-size: 2.5rem;
+		font-weight: 600;
+		margin: 0;
+		color: #221d1dff;
+	}
+
+	.tickers-section {
+		padding: 0px 0;
+	}
+
+	.what-we-do-section {
+		text-align: center;
+		padding: 40px 0;
+		margin-top: 60px;
+	}
+
+	.what-we-do-heading {
+		font-size: 2.75rem;
+		font-weight: 600;
+		margin: 0 0 60px 0;
+		color: #221d1dff;
+	}
+
+	.realestate-content {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 60px;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.realestate-text {
+		flex: 1;
+		text-align: left;
+	}
+
+	.realestate-text h2 {
+		font-size: 2rem;
+		font-weight: 600;
+		margin: 0 0 20px 0;
+		color: #221d1dff;
+	}
+
+	.realestate-description {
+		font-size: 1.1rem;
+		line-height: 1.6;
+		color: #64748b;
+		margin: 0 0 30px 0;
+		max-width: 500px;
+	}
+
+	.explore-btn {
+		background: #1e40af;
+		color: white;
+		border: none;
+		padding: 12px 24px;
+		font-size: 1rem;
+		font-weight: 600;
+		border-radius: 25px;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		box-shadow: 0 4px 6px rgba(30, 64, 175, 0.1);
+	}
+
+	.explore-btn:hover {
+		background: #1d4ed8;
+		transform: translateY(-2px);
+		box-shadow: 0 6px 12px rgba(30, 64, 175, 0.2);
+	}
+
+	.realestate-image {
+		flex: 1;
+		width: 500px;
+		height: 350px;
+		object-fit: cover;
+		border-radius: 20px;
+	}
+
+	.mining-section {
+		padding: 60px 0;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.mining-content {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 60px;
+	}
+
+	.mining-image {
+		flex: 1;
+		width: 500px;
+		height: 350px;
+		object-fit: cover;
+		border-radius: 20px;
+	}
+
+	.mining-text {
+		flex: 1;
+		text-align: left;
+	}
+
+	.mining-text h2 {
+		font-size: 2rem;
+		font-weight: 600;
+		margin: 0 0 20px 0;
+		color: #221d1dff;
+	}
+
+	.mining-description {
+		font-size: 1.1rem;
+		line-height: 1.6;
+		color: #64748b;
+		margin: 0 0 30px 0;
+		max-width: 500px;
+	}
+
+	.stockmarket-section {
+		padding: 60px 0;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.stockmarket-content {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 60px;
+	}
+
+	.stockmarket-text {
+		flex: 1;
+		text-align: left;
+	}
+
+	.stockmarket-text h2 {
+		font-size: 2rem;
+		font-weight: 600;
+		margin: 0 0 20px 0;
+		color: #221d1dff;
+	}
+
+	.stockmarket-description {
+		font-size: 1.1rem;
+		line-height: 1.6;
+		color: #64748b;
+		margin: 0 0 30px 0;
+		max-width: 500px;
+	}
+
+	.stockmarket-image {
+		flex: 1;
+		width: 500px;
+		height: 350px;
+		object-fit: cover;
+		border-radius: 20px;
+	}
+
+	.crypto-section {
+		padding: 60px 0;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.crypto-content {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 60px;
+	}
+
+	.crypto-image {
+		flex: 1;
+		width: 500px;
+		height: 350px;
+		object-fit: cover;
+		border-radius: 20px;
+	}
+
+	.crypto-text {
+		flex: 1;
+		text-align: left;
+	}
+
+	.crypto-text h2 {
+		font-size: 2rem;
+		font-weight: 600;
+		margin: 0 0 20px 0;
+		color: #221d1dff;
+	}
+
+	.crypto-description {
+		font-size: 1.1rem;
+		line-height: 1.6;
+		color: #64748b;
+		margin: 0 0 30px 0;
+		max-width: 500px;
+	}
+
+	.cta-section {
+		background: #1e40af;
+		padding: 80px 0;
+		text-align: center;
+		margin-top: 60px;
+	}
+
+	.cta-content {
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 0 10px;
+	}
+
+	.cta-heading {
+		font-size: 2.5rem;
+		font-weight: 600;
+		margin: 0 0 20px 0;
+		color: white;
+	}
+
+	.cta-description {
+		font-size: 1.2rem;
+		line-height: 1.6;
+		color: rgba(255, 255, 255, 0.9);
+		margin: 0 0 40px 0;
+	}
+
+	.cta-btn {
+		background: white;
+		color: #1e40af;
+		border: none;
+		padding: 16px 32px;
+		font-size: 1.1rem;
+		font-weight: 600;
+		border-radius: 25px;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	}
+
+	.cta-btn:hover {
+		background: #f8fafc;
+		transform: translateY(-2px);
+		box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+	}
+
+	.trades-section {
+		text-align: center;
+		padding: 60px 0;
+	}
+
+	.trades-heading {
+		font-size: 2.5rem;
+		font-weight: 600;
+		margin: 0 0 40px 0;
+		color: #221d1dff;
+	}
+
+	.switch-container {
+		max-width: 170px;
+		margin: 0 auto;
+		background: transparent;
+		border-radius: 40px;
+		padding: 20px;
+		box-shadow: none;
+	}
+
+	.switch-buttons {
+		display: flex;
+		justify-content: center;
+		gap: 10px;
+	}
+
+	.switch-btn {
+		background: transparent;
+		color: #64748b;
+		border: none;
+		padding: 12px 24px;
+		font-size: 1rem;
+		font-weight: 600;
+		border-radius: 12px;
+		cursor: pointer;
+		transition: all 0.3s ease;
+	}
+
+	.switch-btn.active {
+		background: #1e40af;
+		color: white;
+		border-radius: 25px;
+	}
+
+	.switch-btn:hover:not(.active) {
+		color: #1e40af;
+	}
+
+	.tab-content {
+		position: relative;
+	}
+
+	.tab-pane {
+		display: none;
+	}
+
+	.tab-pane.active {
+		display: block;
+	}
+
+	/* Global table styles for dynamically generated content */
+	.table-container {
+		max-width: 1000px;
+		margin: 40px auto 0;
+		background: white;
+		border-radius: 20px;
+		overflow: hidden;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+	}
+
+	.trades-table {
+		width: 100%;
+		border-collapse: collapse;
+	}
+
+	.trades-table th {
+		background: #f8fafc;
+		padding: 12px 16px;
+		text-align: left;
+		font-weight: 600;
+		color: #64748b;
+		font-size: 0.875rem;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+		border-bottom: 2px solid #e2e8f0;
+	}
+
+	.trades-table td {
+		padding: 16px;
+		border-bottom: 1px solid #f1f5f9;
+		font-size: 0.95rem;
+		color: #1e293b;
+		vertical-align: middle;
+	}
+
+	.trades-table tbody tr {
+		transition: all 0.2s ease;
+	}
+
+	.trades-table tbody tr:hover {
+		background: #f8fafc;
+		transform: translateX(2px);
+	}
+
+	.trades-table tbody tr:last-child td {
+		border-bottom: none;
+	}
+
+	.trades-table .symbol {
+		font-weight: 700;
+		color: #1e293b;
+		font-size: 1rem;
+	}
+
+	.trades-table .price {
+		font-weight: 600;
+		color: #1e293b;
+		font-size: 1rem;
+	}
+
+	.trades-table .change.positive {
+		color: #10b981;
+		font-weight: 600;
+		background: rgba(16, 185, 129, 0.1);
+		padding: 4px 8px;
+		border-radius: 6px;
+		display: inline-block;
+	}
+
+	.trades-table .change.negative {
+		color: #ef4444;
+		font-weight: 600;
+		background: rgba(239, 68, 68, 0.1);
+		padding: 4px 8px;
+		border-radius: 6px;
+		display: inline-block;
+	}
+
+	.trades-table td:nth-child(4),
+	.trades-table td:nth-child(5) {
+		color: #64748b;
+		font-size: 0.875rem;
+	}
+
+	@media (max-width: 768px) {
+		.table-container {
+			margin: 20px;
+		}
+		
+		.trades-table th,
+		.trades-table td {
+			padding: 12px;
+			font-size: 0.875rem;
+		}
+	}
+
+	#ticker-container {
+		min-height: 200px;
+	}
+
+	/* Testimonials Section Styles */
+	.testimonials-section {
+		padding: 80px 20px;
+		background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+	}
+
+	.testimonials-container {
+		max-width: 1200px;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.testimonials-heading {
+		font-size: 2.5rem;
+		font-weight: 700;
+		color: #1e293b;
+		margin-bottom: 3rem;
+		text-align: center;
+	}
+
+	.testimonials-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		gap: 2rem;
+		margin-top: 3rem;
+	}
+
+	.testimonial-card {
+		background: white;
+		border-radius: 16px;
+		padding: 2rem;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+		transition: all 0.3s ease;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.testimonial-card::before {
+		content: '"';
+		position: absolute;
+		top: -20px;
+		left: 20px;
+		font-size: 4rem;
+		color: #1e40af;
+		opacity: 0.1;
+	}
+
+	.testimonial-card:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+	}
+
+	.testimonial-content {
+		margin-bottom: 1.5rem;
+	}
+
+	.testimonial-text {
+		font-size: 1rem;
+		line-height: 1.6;
+		color: #475569;
+		margin-bottom: 1.5rem;
+		font-style: italic;
+	}
+
+	.testimonial-author {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		gap: 1rem;
+	}
+
+	.author-info {
+		text-align: left;
+	}
+
+	.author-name {
+		font-size: 1.1rem;
+		font-weight: 600;
+		color: #1e293b;
+		margin: 0;
+	}
+
+	.author-title {
+		font-size: 0.9rem;
+		color: #64748b;
+		margin: 0;
+	}
+
+	@media (max-width: 768px) {
+		.testimonials-section {
+			padding: 60px 20px;
+		}
+
+		.testimonials-heading {
+			font-size: 2rem;
+			margin-bottom: 2rem;
+		}
+
+		.testimonials-grid {
+			grid-template-columns: 1fr;
+			gap: 1.5rem;
+		}
+
+		.testimonial-card {
+			padding: 1.5rem;
+		}
+
+		.testimonial-text {
+			font-size: 0.95rem;
+		}
+	}
+</style>
+
+<script type="module" src="/src/scripts/ticker.js"></script>
+<script type="module" src="/src/scripts/trades.js"></script>
+<script type="module" src="/src/scripts/liveStockData.js"></script>
+<script type="module" src="/src/scripts/liveForexData.js"></script>
+
+<script>
+	function scrollToTop() {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth'
+		});
+	}
+
+	function toggleScrollButton() {
+		const scrollButton = document.getElementById('scrollToTop');
+		if (scrollButton) {
+			if (window.pageYOffset > 300) {
+				scrollButton.style.display = 'block';
+			} else {
+				scrollButton.style.display = 'none';
+			}
+		}
+	}
+
+	// Initialize when DOM is ready
+	document.addEventListener('DOMContentLoaded', () => {
+		const scrollButton = document.getElementById('scrollToTop');
+		if (scrollButton) {
+			scrollButton.addEventListener('click', scrollToTop);
+			
+			// Hide initially
+			scrollButton.style.display = 'none';
+			
+			// Show/hide on scroll
+			window.addEventListener('scroll', toggleScrollButton);
+			
+			// Check initial scroll position
+			toggleScrollButton();
+		}
+	});
+</script>
