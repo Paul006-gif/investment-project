@@ -6,13 +6,10 @@ class LiveStockDataManager {
 	}
 
 	init() {
-		console.log('[LiveStockDataManager] Initializing...');
 		// Wait for DOM to be ready
 		if (document.readyState === 'loading') {
-			console.log('[LiveStockDataManager] DOM loading, waiting for DOMContentLoaded');
 			document.addEventListener('DOMContentLoaded', () => this.setup());
 		} else {
-			console.log('[LiveStockDataManager] DOM ready, setting up immediately');
 			this.setup();
 		}
 	}
@@ -20,13 +17,9 @@ class LiveStockDataManager {
 	setup() {
 		// Find the stock table element
 		this.stockTableElement = document.querySelector('#stock-tbody');
-		console.log('[LiveStockDataManager] Setup - stock-tbody element found:', !!this.stockTableElement);
 		
 		if (this.stockTableElement) {
-			console.log('[LiveStockDataManager] Starting live updates');
 			this.startLiveUpdates();
-		} else {
-			console.warn('[LiveStockDataManager] stock-tbody element not found');
 		}
 	}
 

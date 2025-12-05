@@ -46,13 +46,15 @@ const stockCache = new Map();
 const CACHE_DURATION = 4 * 60 * 1000; // 4 minutes cache
 
 export const GET: APIRoute = async ({ request }) => {
-	const apiKey = import.meta.env.FINNHUB_API_KEY;
+	const apiKey = import.meta.env.FINNHUB_API_KEY || process.env.FINNHUB_API_KEY;
 	
-	console.log('API Key check:', apiKey ? 'Key found' : 'Key missing');
-	console.log('Environment variables:', Object.keys(import.meta.env));
+	console.log('[Stocks API] API Key check:', apiKey ? 'Key found' : 'Key missing');
+	console.log('[Stocks API] FINNHUB_API_KEY from import.meta.env:', import.meta.env.FINNHUB_API_KEY ? 'Yes' : 'No');
+	console.log('[Stocks API] FINNHUB_API_KEY from process.env:', process.env.FINNHUB_API_KEY ? 'Yes' : 'No');
 	
 	if (!apiKey) {
-		return new Response(JSON.stringify({ error: 'API key not configured' }), {
+		console.error('[Stocks API] FINNHUB_API_KEY is not configured in environment variables');
+		return new Response(JSON.stringify({ error: 'API key not configured. Set FINNHUB_API_KEY environment variable.' }), {
 			status: 500,
 			headers: { 'Content-Type': 'application/json' }
 		});
