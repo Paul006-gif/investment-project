@@ -1,0 +1,849 @@
+---
+import Header from '../components/Header.astro';
+import SmoothScroll from '../components/SmoothScroll.jsx';
+import '../styles/global.css';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Services - Horizon Wealth</title>
+	</head>
+	<body>
+		<Header />
+		<SmoothScroll client:load>
+		<main>
+			<section class="hero-section">
+				<div class="hero-content">
+					<h1 class="hero-title">Our Investment Services</h1>
+					<p class="hero-tagline">Comprehensive investment solutions tailored to your financial goals. Explore our diverse portfolio of investment opportunities designed for modern investors.</p>
+				</div>
+			</section>
+
+			<section class="crypto-section">
+				<div class="crypto-content">
+					<div class="crypto-text">
+						<h2>Cryptocurrency</h2>
+						<p>Enter the revolutionary world of digital assets with our comprehensive cryptocurrency investment platform. Access Bitcoin, Ethereum, and thousands of altcoins with advanced trading tools, secure custody solutions, and expert market analysis. Capitalize on the future of finance through strategic crypto investments.</p>
+						
+						<div class="features">
+							<div class="feature">
+								<h3>24/7 Trading</h3>
+								<p>Trade cryptocurrencies anytime, anywhere with no market hours restrictions.</p>
+							</div>
+							<div class="feature">
+								<h3>Secure Custody</h3>
+								<p>Industry-leading security protocols protecting your digital assets.</p>
+							</div>
+							<div class="feature">
+								<h3>Expert Analysis</h3>
+								<p>Real-time market insights and professional trading signals.</p>
+							</div>
+						</div>
+
+						<div class="service-details">
+							<div class="detail-box">
+								<h4>Minimum Investment</h4>
+								<p class="value">$70</p>
+							</div>
+							<div class="detail-box">
+								<h4>Profit Rate</h4>
+								<p class="value">15-55%</p>
+							</div>
+							<div class="detail-box">
+								<h4>Risk Level</h4>
+								<p class="value">Low-High</p>
+							</div>
+						</div>
+
+						<div class="getting-started">
+							<h3>How to Get Started</h3>
+							<ol>
+								<li><strong>Create Account</strong> - Complete KYC verification in 5 minutes</li>
+								<li><strong>Fund Wallet</strong> - Deposit via bank transfer or card</li>
+								<li><strong>Start Trading</strong> - Access 500+ cryptocurrencies</li>
+								<li><strong>Monitor & Grow</strong> - Use advanced analytics tools</li>
+							</ol>
+						</div>
+					</div>
+					<img src="/crypto.jpg" alt="Crypto Investment" class="crypto-image">
+				</div>
+			</section>
+
+			<section class="stockmarket-section">
+				<div class="stockmarket-content">
+					<img src="/stockmarket.jpg" alt="Stock Market" class="stockmarket-image">
+					<div class="stockmarket-text">
+						<h2>Stock Market</h2>
+						<p>Navigate the global financial markets with confidence through our expert-curated investment strategies. Access traditional and emerging markets with cutting-edge analytics and professional portfolio management. Build wealth through diversified stock investments tailored to your financial goals.</p>
+						
+						<div class="features">
+							<div class="feature">
+								<h3>Global Markets Access</h3>
+								<p>Invest in stocks from major exchanges worldwide.</p>
+							</div>
+							<div class="feature">
+								<h3>Portfolio Management</h3>
+								<p>Professional management and optimization of your investments.</p>
+							</div>
+							<div class="feature">
+								<h3>Advanced Analytics</h3>
+								<p>Data-driven insights and performance tracking tools.</p>
+							</div>
+						</div>
+
+						<div class="service-details">
+							<div class="detail-box">
+								<h4>Minimum Investment</h4>
+								<p class="value">$500</p>
+							</div>
+							<div class="detail-box">
+								<h4>Profit Rate</h4>
+								<p class="value">25-40%</p>
+							</div>
+							<div class="detail-box">
+								<h4>Risk Level</h4>
+								<p class="value">Moderate-High</p>
+							</div>
+						</div>
+
+						<div class="getting-started">
+							<h3>How to Get Started</h3>
+							<ol>
+								<li><strong>Open Account</strong> - Verify identity and fund source</li>
+								<li><strong>Complete Profile</strong> - Define investment goals and risk tolerance</li>
+								<li><strong>Review Portfolios</strong> - Choose from curated investment strategies</li>
+								<li><strong>Invest & Track</strong> - Monitor your portfolio in real-time</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="realestate-section">
+				<div class="realestate-content">
+					<div class="realestate-text">
+						<h2>Real Estate</h2>
+						<p>Real estate is a $217 trillion-dollar market making up almost 60% of all global wealth. It's the largest source of wealth, yet it is illiquid for 99% of the world today. We cut out the expensive middle man and democratize access to premium real estate investments with minimal capital requirements.</p>
+						
+						<div class="features">
+							<div class="feature">
+								<h3>Low Entry Point</h3>
+								<p>Invest in real estate with minimal capital requirements.</p>
+							</div>
+							<div class="feature">
+								<h3>Passive Income</h3>
+								<p>Generate steady rental income from property investments.</p>
+							</div>
+							<div class="feature">
+								<h3>Capital Appreciation</h3>
+								<p>Benefit from long-term property value growth.</p>
+							</div>
+						</div>
+
+						<div class="service-details">
+							<div class="detail-box">
+								<h4>Minimum Investment</h4>
+								<p class="value">$250</p>
+							</div>
+							<div class="detail-box">
+								<h4>Profit Rate</h4>
+								<p class="value">35-65%</p>
+							</div>
+							<div class="detail-box">
+								<h4>Risk Level</h4>
+								<p class="value">Low-Moderate</p>
+							</div>
+						</div>
+
+						<div class="getting-started">
+							<h3>How to Get Started</h3>
+							<ol>
+								<li><strong>Register</strong> - Create investor profile and verify accreditation</li>
+								<li><strong>Browse Properties</strong> - Access curated real estate deals</li>
+								<li><strong>Review Documents</strong> - Detailed property analysis and legal documents</li>
+								<li><strong>Co-Invest</strong> - Invest alongside experienced fund managers</li>
+							</ol>
+						</div>
+					</div>
+					<img src="/realestate.jpg" alt="Real Estate" class="realestate-image">
+				</div>
+			</section>
+
+			<section class="mining-section">
+				<div class="mining-content">
+					<img src="/mining.jpg" alt="Mining" class="mining-image">
+					<div class="mining-text">
+						<h2>Mining</h2>
+						<p>Unlock the potential of cryptocurrency mining with our state-of-the-art infrastructure. We provide access to premium mining operations with optimized energy efficiency and maximum profitability. Earn passive income through our carefully curated mining portfolios.</p>
+						
+						<div class="features">
+							<div class="feature">
+								<h3>Optimized Infrastructure</h3>
+								<p>State-of-the-art mining hardware and facilities.</p>
+							</div>
+							<div class="feature">
+								<h3>Energy Efficient</h3>
+								<p>Reduced operational costs with eco-friendly mining.</p>
+							</div>
+							<div class="feature">
+								<h3>Passive Returns</h3>
+								<p>Consistent daily earnings from mining operations.</p>
+							</div>
+						</div>
+
+						<div class="service-details">
+							<div class="detail-box">
+								<h4>Minimum Investment</h4>
+								<p class="value">$250</p>
+							</div>
+							<div class="detail-box">
+								<h4>Profit Rate</h4>
+								<p class="value">35-45%</p>
+							</div>
+							<div class="detail-box">
+								<h4>Risk Level</h4>
+								<p class="value">Moderate</p>
+							</div>
+						</div>
+
+						<div class="getting-started">
+							<h3>How to Get Started</h3>
+							<ol>
+								<li><strong>Verify Account</strong> - Complete identity verification</li>
+								<li><strong>Select Package</strong> - Choose mining power tier</li>
+								<li><strong>Activate Mining</strong> - Begin earning immediately</li>
+								<li><strong>Receive Daily Payouts</strong> - Earnings credited automatically</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="comparison-section">
+				<h2>Service Comparison</h2>
+				<div class="comparison-table">
+					<table>
+						<thead>
+							<tr>
+								<th>Feature</th>
+								<th>Cryptocurrency</th>
+								<th>Stock Market</th>
+								<th>Real Estate</th>
+								<th>Mining</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><strong>Liquidity</strong></td>
+								<td>Very High</td>
+								<td>High</td>
+								<td>Low</td>
+								<td>Medium</td>
+							</tr>
+							<tr>
+								<td><strong>Starting Amount</strong></td>
+								<td>$100</td>
+								<td>$500</td>
+								<td>$1,000</td>
+								<td>$250</td>
+							</tr>
+							<tr>
+								<td><strong>Time Commitment</strong></td>
+								<td>High</td>
+								<td>Low-Medium</td>
+								<td>Minimal</td>
+								<td>None</td>
+							</tr>
+							<tr>
+								<td><strong>Knowledge Required</strong></td>
+								<td>High</td>
+								<td>Medium</td>
+								<td>Low</td>
+								<td>Minimal</td>
+							</tr>
+							<tr>
+								<td><strong>Best For</strong></td>
+								<td>Active Traders</td>
+								<td>Long-term Growth</td>
+								<td>Passive Income</td>
+								<td>Passive Returns</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</section>
+
+			<section class="faq-section">
+				<h2>Frequently Asked Questions</h2>
+				<div class="faq-grid">
+					<div class="faq-item">
+						<h3>What is Horixon Wealth and how does it work?</h3>
+						<p>Horixon Wealth is a comprehensive investment platform that provides access to various financial products including cryptocurrency investments, traditional stocks, and managed investment packages. Our platform uses advanced technology to help investors make informed decisions while offering competitive returns on investments.</p>
+					</div>
+					<div class="faq-item">
+						<h3>How do I get started with investing?</h3>
+						<p>Getting started is easy! Simply create an account, complete the verification process, deposit funds into your account, and choose from our available investment packages. Our team is available 24/7 to guide you through the process and help you select the best investment options based on your financial goals.</p>
+					</div>
+					<div class="faq-item">
+						<h3>What is horizon-wealth?</h3>
+						<p>horizon-wealth our company provides a full investment service focused on the mining, cryptocurrency and stock market We are among the best platforms to invest and grow your online assets</p>
+					</div>
+					<div class="faq-item">
+						<h3>How do I create my account?</h3>
+						<p>Registration process is very easy and will take a few moments to complete simply SIGN-UP button and fill in all the required fields.</p>
+					</div>
+					<div class="faq-item">
+						<h3>How do I make deposits?</h3>
+						<p>To deposit funds in your trading account is quick and simple For your convenience you may choose one of the several available deposit methods To make a successful deposit please follow the steps below Login to your account Click on the DEPOSITS button in the DASHBOARD section Choose the deposit option And follow the steps to complete your transaction</p>
+					</div>
+					<div class="faq-item">
+						<h3>How long does my deposit take before it can reflect on my Horizon-wealth account dashboard?</h3>
+						<p>Your deposit will be reflected immediately once it is confirmed on the blockchain network</p>
+					</div>
+					<div class="faq-item">
+						<h3>How do I make withdrawal?</h3>
+						<p>To make a withdrawal request click the WITHDRAW button at the top center of your Horizon-wealth account dashboard and input the required details to withdraw</p>
+					</div>
+					<div class="faq-item">
+						<h3>How long does it take take to process my withdrawal?</h3>
+						<p>Once we receive your withdrawal request we process immediately and send to your wallet</p>
+					</div>
+					<div class="faq-item">
+						<h3>Is the company properly registered?</h3>
+						<p>Yes we are officially and properly registered company house with the name Horizon -wealth LTD</p>
+					</div>
+				</div>
+			</section>
+		</main>
+		</SmoothScroll>
+
+		<a href="https://wa.me/" class="floating-chat-btn" title="Chat with us">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 432 432"><path fill="#ffffff" d="M364.5 65Q427 127 427 214.5T364.5 364T214 426q-54 0-101-26L0 429l30-109Q2 271 2 214q0-87 62-149T214 3t150.5 62zM214 390q73 0 125-51.5T391 214T339 89.5T214 38T89.5 89.5T38 214q0 51 27 94l4 6l-18 65l67-17l6 3q42 25 90 25zm97-132q9 5 10 7q4 6-3 25q-3 8-15 15.5t-21 9.5q-18 2-33-2q-17-6-30-11q-8-4-15.5-8.5t-14.5-9t-13-9.5t-11.5-10t-10.5-10.5t-8.5-9.5t-7-8.5t-5.5-7t-3.5-5L128 222q-22-29-22-55q0-24 19-44q6-7 14-7q6 0 10 1q8 0 12 9q2 3 6 13l7 17.5l3 8.5q3 5 1 9q-3 7-5 9l-3 3l-3 3.5l-2 2.5q-6 6-3 11q13 22 30 37q13 11 43 26q7 3 11-1q12-15 17-21q4-6 12-3q6 3 36 17z"/></svg>
+			<span>Chat with us</span>
+		</a>
+	</body>
+</html>
+
+<style>
+	body {
+		overflow-x: hidden;
+		margin: 0;
+		padding: 0;
+	}
+
+	main {
+		width: 100%;
+		overflow-x: hidden;
+	}
+
+	/* Hero Section */
+	.hero-section {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 60vh;
+		text-align: center;
+		background: linear-gradient(135deg, #f0f4ff 0%, #ffffff 100%);
+	}
+
+	.hero-content {
+		max-width: 800px;
+		padding: 60px 20px;
+	}
+
+	.hero-title {
+		font-size: 3.5rem;
+		font-weight: 700;
+		color: #221d1dff;
+		margin: 0 0 20px 0;
+		line-height: 1.2;
+	}
+
+	.hero-tagline {
+		font-size: 1.25rem;
+		color: #64748b;
+		margin: 0;
+		font-weight: 400;
+		line-height: 1.6;
+	}
+
+	/* Section Styles */
+	.crypto-section {
+		padding: 80px 100px;
+		background-color: #ffffff;
+	}
+
+	.stockmarket-section {
+		padding: 80px 100px;
+		background-color: #f8fafc;
+	}
+
+	.realestate-section {
+		padding: 80px 100px;
+		background-color: #ffffff;
+	}
+
+	.mining-section {
+		padding: 80px 100px;
+		background-color: #f8fafc;
+	}
+
+	/* Content Layout */
+	.crypto-content,
+	.stockmarket-content,
+	.realestate-content,
+	.mining-content {
+		max-width: 1200px;
+		margin: 0 auto;
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 60px;
+	}
+
+	.crypto-text,
+	.stockmarket-text,
+	.realestate-text,
+	.mining-text {
+		flex: 1;
+	}
+
+	.crypto-text h2,
+	.stockmarket-text h2,
+	.realestate-text h2,
+	.mining-text h2 {
+		font-size: 2.5rem;
+		font-weight: 600;
+		color: #221d1dff;
+		margin: 0 0 20px 0;
+	}
+
+	.crypto-text p,
+	.stockmarket-text p,
+	.realestate-text p,
+	.mining-text p {
+		font-size: 1.1rem;
+		line-height: 1.6;
+		color: #64748b;
+		margin: 0 0 30px 0;
+		max-width: 600px;
+	}
+
+	/* Features */
+	.features {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		margin-bottom: 30px;
+	}
+
+	.feature {
+		padding: 15px;
+		background: rgba(30, 64, 175, 0.05);
+		border-left: 4px solid #1e40af;
+		border-radius: 8px;
+	}
+
+	.feature h3 {
+		font-size: 1rem;
+		font-weight: 600;
+		color: #221d1dff;
+		margin: 0 0 8px 0;
+	}
+
+	.feature p {
+		font-size: 0.95rem;
+		color: #64748b;
+		margin: 0;
+	}
+
+	/* Service Details */
+	.service-details {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 20px;
+		margin-bottom: 30px;
+		padding: 20px 0;
+		border-top: 1px solid #e2e8f0;
+		border-bottom: 1px solid #e2e8f0;
+	}
+
+	.detail-box {
+		text-align: center;
+	}
+
+	.detail-box h4 {
+		font-size: 0.9rem;
+		font-weight: 600;
+		color: #64748b;
+		margin: 0 0 8px 0;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+	}
+
+	.detail-box .value {
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: #1e40af;
+		margin: 0;
+	}
+
+	/* Getting Started */
+	.getting-started {
+		margin-top: 30px;
+	}
+
+	.getting-started h3 {
+		font-size: 1.25rem;
+		font-weight: 600;
+		color: #221d1dff;
+		margin: 0 0 20px 0;
+	}
+
+	.getting-started ol {
+		margin: 0;
+		padding-left: 20px;
+		list-style: none;
+		counter-reset: step-counter;
+	}
+
+	.getting-started li {
+		counter-increment: step-counter;
+		margin-bottom: 15px;
+		padding-left: 35px;
+		position: relative;
+		font-size: 1rem;
+		color: #64748b;
+		line-height: 1.6;
+	}
+
+	.getting-started li::before {
+		content: counter(step-counter);
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 28px;
+		height: 28px;
+		background: #1e40af;
+		color: white;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: 600;
+		font-size: 0.9rem;
+	}
+
+	.getting-started strong {
+		color: #221d1dff;
+	}
+
+	/* Images */
+	.crypto-image,
+	.stockmarket-image,
+	.realestate-image,
+	.mining-image {
+		flex: 1;
+		width: 100%;
+		height: 400px;
+		max-width: 500px;
+		border-radius: 20px;
+		object-fit: cover;
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+	}
+
+	/* Comparison Section */
+	.comparison-section {
+		padding: 80px 100px;
+		background-color: #ffffff;
+	}
+
+	.comparison-section h2 {
+		font-size: 2.5rem;
+		font-weight: 600;
+		color: #221d1dff;
+		text-align: center;
+		margin: 0 0 50px 0;
+	}
+
+	.comparison-table {
+		max-width: 1200px;
+		margin: 0 auto;
+		overflow-x: auto;
+	}
+
+	.comparison-table table {
+		width: 100%;
+		border-collapse: collapse;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+		border-radius: 12px;
+		overflow: hidden;
+	}
+
+	.comparison-table th {
+		background: #1e40af;
+		color: white;
+		padding: 20px;
+		text-align: left;
+		font-weight: 600;
+		font-size: 1rem;
+	}
+
+	.comparison-table td {
+		padding: 18px 20px;
+		border-bottom: 1px solid #e2e8f0;
+		font-size: 0.95rem;
+		color: #64748b;
+	}
+
+	.comparison-table tbody tr:hover {
+		background: #f8fafc;
+	}
+
+	.comparison-table tbody tr:last-child td {
+		border-bottom: none;
+	}
+
+	/* FAQ Section */
+	.faq-section {
+		padding: 80px 100px;
+		background-color: #f8fafc;
+	}
+
+	.faq-section h2 {
+		font-size: 2.5rem;
+		font-weight: 600;
+		color: #221d1dff;
+		text-align: center;
+		margin: 0 0 50px 0;
+	}
+
+	.faq-grid {
+		max-width: 1200px;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		gap: 30px;
+	}
+
+	.faq-item {
+		background: white;
+		padding: 30px;
+		border-radius: 12px;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+		transition: all 0.3s ease;
+	}
+
+	.faq-item:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+	}
+
+	.faq-item h3 {
+		font-size: 1.1rem;
+		font-weight: 600;
+		color: #221d1dff;
+		margin: 0 0 15px 0;
+	}
+
+	.faq-item p {
+		font-size: 0.95rem;
+		color: #64748b;
+		line-height: 1.6;
+		margin: 0;
+	}
+
+	/* Responsive */
+	@media (max-width: 1024px) {
+		.crypto-section,
+		.stockmarket-section,
+		.realestate-section,
+		.mining-section {
+			padding: 60px 40px;
+		}
+
+		.crypto-content,
+		.stockmarket-content,
+		.realestate-content,
+		.mining-content {
+			flex-direction: column;
+			gap: 40px;
+		}
+
+		.comparison-section,
+		.faq-section {
+			padding: 60px 40px;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.hero-section {
+			min-height: 40vh;
+		}
+
+		.hero-title {
+			font-size: 2.5rem;
+		}
+
+		.hero-tagline {
+			font-size: 1.1rem;
+		}
+
+		.crypto-section,
+		.stockmarket-section,
+		.realestate-section,
+		.mining-section {
+			padding: 40px 20px;
+		}
+
+		.crypto-text h2,
+		.stockmarket-text h2,
+		.realestate-text h2,
+		.mining-text h2 {
+			font-size: 2rem;
+		}
+
+		.crypto-text p,
+		.stockmarket-text p,
+		.realestate-text p,
+		.mining-text p {
+			font-size: 1rem;
+		}
+
+		.service-details {
+			grid-template-columns: 1fr;
+		}
+
+		.comparison-table table {
+			font-size: 0.85rem;
+		}
+
+		.comparison-table th,
+		.comparison-table td {
+			padding: 12px 15px;
+		}
+
+		.faq-grid {
+			grid-template-columns: 1fr;
+			gap: 20px;
+		}
+
+		.faq-item {
+			padding: 20px;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.hero-title {
+			font-size: 2rem;
+		}
+
+		.hero-tagline {
+			font-size: 1rem;
+		}
+
+		.crypto-section,
+		.stockmarket-section,
+		.realestate-section,
+		.mining-section {
+			padding: 30px 15px;
+		}
+
+		.crypto-text h2,
+		.stockmarket-text h2,
+		.realestate-text h2,
+		.mining-text h2 {
+			font-size: 1.75rem;
+		}
+
+		.comparison-section,
+		.faq-section {
+			padding: 30px 15px;
+		}
+
+		.comparison-section h2,
+		.faq-section h2 {
+			font-size: 2rem;
+			margin-bottom: 30px;
+		}
+
+		.getting-started li {
+			padding-left: 30px;
+			margin-bottom: 12px;
+		}
+
+		.getting-started li::before {
+			width: 24px;
+			height: 24px;
+			font-size: 0.8rem;
+		}
+
+		.floating-chat-btn {
+			width: 50px;
+			height: 50px;
+		}
+
+		.floating-chat-btn span {
+			display: none;
+		}
+	}
+
+	/* Floating Chat Button */
+	.floating-chat-btn {
+		position: fixed;
+		bottom: 30px;
+		right: 30px;
+		background: linear-gradient(135deg, #25d366 0%, #1da853 100%);
+		color: white;
+		border-radius: 50px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-decoration: none;
+		box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+		transition: all 0.3s ease;
+		z-index: 999;
+		gap: 10px;
+		padding: 12px 20px;
+		height: fit-content;
+	}
+
+	.floating-chat-btn:hover {
+		transform: scale(1.1);
+		box-shadow: 0 12px 30px rgba(37, 211, 102, 0.4);
+	}
+
+	.floating-chat-btn:active {
+		transform: scale(0.95);
+	}
+
+	.floating-chat-btn svg {
+		width: 24px;
+		height: 24px;
+		flex-shrink: 0;
+	}
+
+	.floating-chat-btn span {
+		font-size: 0.85rem;
+		font-weight: 600;
+		white-space: nowrap;
+	}
+
+	@media (max-width: 768px) {
+		.floating-chat-btn {
+			bottom: 20px;
+			right: 20px;
+			width: 55px;
+			height: 55px;
+			padding: 0;
+		}
+
+		.floating-chat-btn span {
+			display: none;
+		}
+	}
+</style>

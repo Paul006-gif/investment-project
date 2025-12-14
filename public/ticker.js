@@ -245,22 +245,20 @@ class TickerManager {
 	}
 
 	updateDisplay(tickers) {
-		const displayTickers = this.popularSymbols.map((symbol) => {
+		// Only show tickers that have data
+		const displayTickers = [];
+		for (const symbol of this.popularSymbols) {
 			const data = tickers.get(symbol);
-			if (!data) {
-				return {
-					symbol,
-					price: '--',
-					change: '--'
-				};
+			if (data) {
+				displayTickers.push({
+					symbol: data.symbol,
+					price: data.price,
+					change: data.change
+				});
 			}
-			return {
-				symbol: data.symbol,
-				price: data.price,
-				change: data.change
-			};
-		});
+		}
 
+		console.log('[TickerManager] Display tickers:', displayTickers.length, '/', this.popularSymbols.length);
 		this.renderTickerStrip(displayTickers, true);
 	}
 
