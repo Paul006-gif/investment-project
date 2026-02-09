@@ -5,7 +5,11 @@ import StockTable from '../components/StockTable.astro';
 import ForexTable from '../components/ForexTable.astro';
 import Footer from '../components/Footer.astro';
 import SmoothScroll from '../components/SmoothScroll.jsx';
+import HomeVideoLanguageSwitcher from '../components/HomeVideoLanguageSwitcher.jsx';
+import { t, getLanguage } from '../utils/i18n';
 import '../styles/global.css';
+
+const lang = getLanguage();
 ---
 
 <html lang="en">
@@ -23,9 +27,9 @@ import '../styles/global.css';
 			<section class="hero">
 				<div class="hero-content">
 					<div class="hero-text">
-						<p class="hero-motto">Building Wealth<br>Beyond Borders</p>
-						<p class="hero-sub-motto">The investment climate is changing, and investors need to create financial legacies that will stand the test of time. As the largest digital currency asset manager, horizon-wealth helps investors access the ever-evolving digital economy to build their future in the present.</p>
-						<a href="/get-started" class="btn btn-primary">Get Started</a>
+						<p class="hero-motto">{t('home.hero_title', lang)}</p>
+						<p class="hero-sub-motto">{t('home.hero_subtitle', lang)}</p>
+						<a href="/get-started" class="btn btn-primary">{t('home.get_started', lang)}</a>
 					</div>
 					<video 
 						src="/USD Mockup_WebM.webm" 
@@ -38,71 +42,72 @@ import '../styles/global.css';
 				</div>
 			</section>
 			<section class="financial-markets-section">
-				<h1 class="financial-markets-heading">Financial Markets</h1>
+				<h1 class="financial-markets-heading">{t('home.financial_markets', lang)}</h1>
 			</section>
 			<section class="tickers-section">
 				<div id="ticker-container"></div>
 			</section>
+			<HomeVideoLanguageSwitcher client:load />
 			<section class="what-we-do-section">
-				<h1 class="what-we-do-heading">Our Core Services.</h1>
+				<h1 class="what-we-do-heading">{t('home.our_services', lang)}</h1>
 				<div class="realestate-content">
 					<div class="realestate-text">
-						<h2>Real estate</h2>
+						<h2>{t('home.real_estate', lang)}</h2>
 						<p class="realestate-description">
-							Real estate is a $217 trillion-dollar market making up almost 60% of all global wealth. It's the largest source of wealth, yet it is illiquid for 99% of the world today. In the past, you only had access to real estate if you were rich or had rich friends–meaning that most people weren't able to benefit from the passive income and capital appreciation it provides.. Today, Phemex-ventures cut out the expensive middle man and provide access for investors, by investing in shares of real estate using crypto currencies.
+							{t('home.real_estate_desc', lang)}
 						</p>
-						<button class="explore-btn">Explore</button>
-					</div>
-					<img src="/realestate.jpg" alt="Real Estate" class="realestate-image">
-				</div>
-			</section>
-			<section class="mining-section">
-				<div class="mining-content">
-					<img src="/mining.jpg" alt="Mining" class="mining-image">
-					<div class="mining-text">
-						<h2>Mining</h2>
+						<a href="/services" class="explore-btn">{t('home.explore', lang)}</a>
+						</div>
+						<img src="/realestate.jpg" alt="Real Estate" class="realestate-image">
+						</div>
+						</section>
+						<section class="mining-section">
+						<div class="mining-content">
+						<img src="/mining.jpg" alt="Mining" class="mining-image">
+						<div class="mining-text">
+						<h2>{t('home.mining', lang)}</h2>
 						<p class="mining-description">
-							Unlock the potential of cryptocurrency mining with our state-of-the-art infrastructure. We provide access to premium mining operations with optimized energy efficiency and maximum profitability. Join the digital gold rush and earn passive income through our carefully curated mining portfolios.
+							{t('home.mining_desc', lang)}
 						</p>
-						<button class="explore-btn">Explore</button>
-					</div>
-				</div>
-			</section>
-			<section class="stockmarket-section">
-				<div class="stockmarket-content">
-					<div class="stockmarket-text">
-						<h2>Stock Market</h2>
+						<a href="/services" class="explore-btn">{t('home.explore', lang)}</a>
+						</div>
+						</div>
+						</section>
+						<section class="stockmarket-section">
+						<div class="stockmarket-content">
+						<div class="stockmarket-text">
+						<h2>{t('home.stock_market', lang)}</h2>
 						<p class="stockmarket-description">
-							Navigate the global financial markets with confidence through our expert-curated investment strategies. Access traditional and emerging markets with cutting-edge analytics and professional portfolio management. Build wealth through diversified stock investments tailored to your financial goals.
+							{t('home.stock_market_desc', lang)}
 						</p>
-						<button class="explore-btn">Explore</button>
-					</div>
-					<img src="/stockmarket.jpg" alt="Stock Market" class="stockmarket-image">
-				</div>
-			</section>
-			<section class="crypto-section">
-				<div class="crypto-content">
-					<img src="/crypto.jpg" alt="Crypto Market" class="crypto-image">
-					<div class="crypto-text">
-						<h2>Crypto Market</h2>
+						<a href="/services" class="explore-btn">{t('home.explore', lang)}</a>
+						</div>
+						<img src="/stockmarket.jpg" alt="Stock Market" class="stockmarket-image">
+						</div>
+						</section>
+						<section class="crypto-section">
+						<div class="crypto-content">
+						<img src="/crypto.jpg" alt="Crypto Market" class="crypto-image">
+						<div class="crypto-text">
+						<h2>{t('home.crypto_market', lang)}</h2>
 						<p class="crypto-description">
-							Enter the revolutionary world of digital assets with our comprehensive cryptocurrency investment platform. Access Bitcoin, Ethereum, and thousands of altcoins with advanced trading tools, secure custody solutions, and expert market analysis. Capitalize on the future of finance through strategic crypto investments.
+							{t('home.crypto_market_desc', lang)}
 						</p>
-						<button class="explore-btn">Explore</button>
-					</div>
-				</div>
-			</section>
+						<a href="/services" class="explore-btn">{t('home.explore', lang)}</a>
+						</div>
+						</div>
+						</section>
 			<section class="cta-section">
 				<div class="cta-content">
-					<h2 class="cta-heading">Ready to Start Your Investment Journey?</h2>
+					<h2 class="cta-heading">{t('home.ready_to_start', lang)}</h2>
 					<p class="cta-description">
-						Join thousands of investors who have already discovered the power of diversified investment strategies. Take control of your financial future today.
+						{t('home.ready_description', lang)}
 					</p>
-					<button class="cta-btn">Get Started Now</button>
+					<a href="/investment-plans" class="cta-btn">{t('home.cta_button', lang)}</a>
 				</div>
 			</section>
 			<section class="trades-section">
-				<h1 class="trades-heading">Find your trades</h1>
+				<h1 class="trades-heading">{t('home.find_trades', lang)}</h1>
 				<div class="switch-container">
 					<div class="switch-buttons">
 						<button class="switch-btn active" data-tab="forex">Forex</button>
@@ -120,20 +125,20 @@ import '../styles/global.css';
 			</section>
 			<section class="testimonials-section">
 				<div class="testimonials-container">
-					<h2 class="testimonials-heading">What our clients say about us</h2>
+					<h2 class="testimonials-heading">{t('home.testimonials', lang)}</h2>
 					<div class="testimonials-grid">
 						<div class="testimonial-card">
 							<div class="testimonial-content">
 								<p class="testimonial-text">
-									"The platform has transformed my investment strategy. The real-time data and comprehensive market analysis have helped me make informed decisions that consistently outperform the market."
+									"{t('home.testimonial_1_text', lang)}"
 								</p>
 								<div class="testimonial-author">
 									<div class="author-avatar" style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #1e40af, #3b82f6); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 1.2rem;">
 										SJ
 									</div>
 									<div class="author-info">
-										<h4 class="author-name">Sarah Johnson</h4>
-										<p class="author-title">Portfolio Manager</p>
+										<h4 class="author-name">{t('home.testimonial_1_author', lang)}</h4>
+										<p class="author-title">{t('home.testimonial_1_title', lang)}</p>
 									</div>
 								</div>
 							</div>
@@ -141,15 +146,15 @@ import '../styles/global.css';
 						<div class="testimonial-card">
 							<div class="testimonial-content">
 								<p class="testimonial-text">
-									"As a day trader, I need reliable data and fast execution. This platform delivers both. The forex and stock tables give me everything I need at a glance."
+									"{t('home.testimonial_2_text', lang)}"
 								</p>
 								<div class="testimonial-author">
 									<div class="author-avatar" style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #dc2626, #ef4444); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 1.2rem;">
 										MC
 									</div>
 									<div class="author-info">
-										<h4 class="author-name">Michael Chen</h4>
-										<p class="author-title">Day Trader</p>
+										<h4 class="author-name">{t('home.testimonial_2_author', lang)}</h4>
+										<p class="author-title">{t('home.testimonial_2_title', lang)}</p>
 									</div>
 								</div>
 							</div>
@@ -157,15 +162,15 @@ import '../styles/global.css';
 						<div class="testimonial-card">
 							<div class="testimonial-content">
 								<p class="testimonial-text">
-									"The educational resources combined with powerful trading tools have helped me grow from a beginner to a confident investor. Highly recommended for anyone serious about trading."
+									"{t('home.testimonial_3_text', lang)}"
 								</p>
 								<div class="testimonial-author">
 									<div class="author-avatar" style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #059669, #10b981); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 1.2rem;">
 										ER
 									</div>
 									<div class="author-info">
-										<h4 class="author-name">Emily Rodriguez</h4>
-										<p class="author-title">Investment Analyst</p>
+										<h4 class="author-name">{t('home.testimonial_3_author', lang)}</h4>
+										<p class="author-title">{t('home.testimonial_3_title', lang)}</p>
 									</div>
 								</div>
 							</div>
@@ -179,8 +184,9 @@ import '../styles/global.css';
 		<button id="scrollToTop" class="scroll-to-top">↑</button>
 		<a href="https://wa.me/" class="floating-chat-btn" title="Chat with us">
 			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 432 432"><path fill="#ffffff" d="M364.5 65Q427 127 427 214.5T364.5 364T214 426q-54 0-101-26L0 429l30-109Q2 271 2 214q0-87 62-149T214 3t150.5 62zM214 390q73 0 125-51.5T391 214T339 89.5T214 38T89.5 89.5T38 214q0 51 27 94l4 6l-18 65l67-17l6 3q42 25 90 25zm97-132q9 5 10 7q4 6-3 25q-3 8-15 15.5t-21 9.5q-18 2-33-2q-17-6-30-11q-8-4-15.5-8.5t-14.5-9t-13-9.5t-11.5-10t-10.5-10.5t-8.5-9.5t-7-8.5t-5.5-7t-3.5-5L128 222q-22-29-22-55q0-24 19-44q6-7 14-7q6 0 10 1q8 0 12 9q2 3 6 13l7 17.5l3 8.5q3 5 1 9q-3 7-5 9l-3 3l-3 3.5l-2 2.5q-6 6-3 11q13 22 30 37q13 11 43 26q7 3 11-1q12-15 17-21q4-6 12-3q6 3 36 17z"/></svg>
-			<span>Chat with us</span>
+			<span>{t('home.chat_with_us', lang)}</span>
 		</a>
+		<script is:inline src="/translations.js"></script>
 	</body>
 </html>
 

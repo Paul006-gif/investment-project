@@ -8,53 +8,60 @@ import searchIcon from './icons/search.svg';
 		<div class="search-container">
 			<div class="search-input-wrapper">
 				<img src={searchIcon.src} alt="Search" class="search-icon">
-				<input type="text" placeholder="Search" class="search-input">
+				<input type="text" placeholder="Search" class="search-input" id="languageSearch">
 			</div>
 		</div>
-		<div class="language-list">
-			<button class="language-btn">
+		<div class="language-list" id="languageList">
+			<button class="language-btn" data-lang="en-US" data-gtag="en">
 				<span class="language-name">English</span>
 				<span class="region-name">United States</span>
 			</button>
-			<button class="language-btn">
+			<button class="language-btn" data-lang="en-GB" data-gtag="en">
 				<span class="language-name">English</span>
 				<span class="region-name">United Kingdom</span>
 			</button>
-			<button class="language-btn">
+			<button class="language-btn" data-lang="es-ES" data-gtag="es">
 				<span class="language-name">Spanish</span>
 				<span class="region-name">Spain</span>
 			</button>
-			<button class="language-btn">
+			<button class="language-btn" data-lang="es-MX" data-gtag="es">
 				<span class="language-name">Spanish</span>
 				<span class="region-name">Mexico</span>
 			</button>
-			<button class="language-btn">
+			<button class="language-btn" data-lang="fr-FR" data-gtag="fr">
 				<span class="language-name">French</span>
 				<span class="region-name">France</span>
 			</button>
-			<button class="language-btn">
+			<button class="language-btn" data-lang="fr-CA" data-gtag="fr">
 				<span class="language-name">French</span>
 				<span class="region-name">Canada</span>
 			</button>
-			<button class="language-btn">
+			<button class="language-btn" data-lang="de-DE" data-gtag="de">
 				<span class="language-name">German</span>
 				<span class="region-name">Germany</span>
 			</button>
-			<button class="language-btn">
+			<button class="language-btn" data-lang="it-IT" data-gtag="it">
 				<span class="language-name">Italian</span>
 				<span class="region-name">Italy</span>
 			</button>
-			<button class="language-btn">
+			<button class="language-btn" data-lang="pt-BR" data-gtag="pt">
 				<span class="language-name">Portuguese</span>
 				<span class="region-name">Brazil</span>
 			</button>
-			<button class="language-btn">
+			<button class="language-btn" data-lang="pt-PT" data-gtag="pt">
 				<span class="language-name">Portuguese</span>
 				<span class="region-name">Portugal</span>
+			</button>
+			<button class="language-btn" data-lang="pl-PL" data-gtag="pl">
+				<span class="language-name">Polish</span>
+				<span class="region-name">Poland</span>
 			</button>
 		</div>
 	</div>
 </div>
+
+<!-- Google Translate Widget -->
+<div id="google_translate_element" class="google-translate-widget"></div>
 
 <style>
 	.language-modal {
@@ -161,8 +168,97 @@ import searchIcon from './icons/search.svg';
 	.language-btn:hover {
 		background-color: #f3f4f6;
 	}
+
+	.language-btn.active {
+		background-color: #e0e7ff;
+		border-left: 4px solid #1e40af;
+		padding-left: 12px;
+	}
+
 	.language-btn:focus {
 		outline: 2px solid #1e40af;
 		outline-offset: 2px;
 	}
+
+	.google-translate-widget {
+		display: none;
+	}
 </style>
+
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<script>
+	function googleTranslateElementInit() {
+		new google.translate.TranslateElement({
+			pageLanguage: 'en',
+			includedLanguages: 'en,es,fr,de,it,pt,pl',
+			layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+		}, 'google_translate_element');
+	}
+
+	document.addEventListener('DOMContentLoaded', () => {
+		// Language search functionality
+		const searchInput = document.getElementById('languageSearch');
+		const languageList = document.getElementById('languageList');
+		const languageBtns = languageList.querySelectorAll('.language-btn');
+
+		if (searchInput) {
+			searchInput.addEventListener('input', (e) => {
+				const searchTerm = e.target.value.toLowerCase();
+				languageBtns.forEach(btn => {
+					const languageName = btn.querySelector('.language-name').textContent.toLowerCase();
+					const regionName = btn.querySelector('.region-name').textContent.toLowerCase();
+					
+					if (languageName.includes(searchTerm) || regionName.includes(searchTerm)) {
+						btn.style.display = 'flex';
+					} else {
+						btn.style.display = 'none';
+					}
+				});
+			});
+		}
+
+		// Language selection functionality
+		languageBtns.forEach(btn => {
+			btn.addEventListener('click', () => {
+				const gtagLang = btn.getAttribute('data-gtag');
+				
+				// Store language preference
+				localStorage.setItem('selectedLanguage', gtagLang);
+				
+				// Dispatch custom event for React components to update
+				window.dispatchEvent(new CustomEvent('languageChange', { 
+					detail: { language: gtagLang } 
+				}));
+				
+				// Trigger Google Translate
+				if (typeof google !== 'undefined' && google.translate) {
+					const translateElements = document.querySelectorAll('.goog-te-combo');
+					if (translateElements.length > 0) {
+						const selectElement = translateElements[0];
+						selectElement.value = gtagLang;
+						selectElement.dispatchEvent(new Event('change'));
+					}
+				}
+				
+				// Reload page to apply language changes
+				setTimeout(() => {
+					location.reload();
+				}, 300);
+				
+				// Visual feedback
+				languageBtns.forEach(b => b.classList.remove('active'));
+				btn.classList.add('active');
+			});
+		});
+
+		// Restore previously selected language
+		const savedLanguage = localStorage.getItem('selectedLanguage');
+		if (savedLanguage) {
+			const savedBtn = document.querySelector(`[data-gtag="${savedLanguage}"]`);
+			if (savedBtn) {
+				savedBtn.classList.add('active');
+			}
+		}
+	});
+</script>

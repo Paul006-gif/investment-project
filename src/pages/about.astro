@@ -4,6 +4,7 @@ import FeatureCards from '../components/FeatureCards.astro';
 import TeamSection from '../components/TeamSection.astro';
 import Footer from '../components/Footer.astro';
 import SmoothScroll from '../components/SmoothScroll.jsx';
+import VideoLanguageSwitcher from '../components/VideoLanguageSwitcher.jsx';
 import '../styles/global.css';
 ---
 
@@ -71,6 +72,8 @@ import '../styles/global.css';
 				{ title: "Quick Returns", description: "We offer you an unbeatable interest on your inves within the shortest possible time", icon: "" },
 				{ title: "Our knowledge", description: "The teams of technicians  horizon-wealth and the company's financial department mini key cryptocurrency market trends We are studying the process of mining and search the state that will optimize costs and reduce net cost of cryptocurrencies and stocks.", icon: "" }
 			]} />
+			
+			<VideoLanguageSwitcher client:load />
 			
 			<TeamSection />
 			

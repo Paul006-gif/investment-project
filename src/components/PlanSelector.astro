@@ -89,6 +89,11 @@ const { plans } = Astro.props;
 		transition: all 0.3s ease;
 	}
 
+	.plan-tab[data-tier="growth"],
+	.plan-tab[data-tier="premium"] {
+		color: #1e40af;
+	}
+
 	.plan-tab:hover {
 		background: #e5e7eb;
 		transform: translateY(-2px);

@@ -1,0 +1,477 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import SmoothScroll from '../components/SmoothScroll.jsx';
+import '../styles/global.css';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Contact Us - Horizon Wealth</title>
+	</head>
+	<body>
+		<Header />
+		<SmoothScroll client:load>
+			<main>
+				<section class="contact-hero">
+					<h1>Contact Us</h1>
+					<p class="contact-tagline">Get in touch with our team. We're here to help.</p>
+				</section>
+
+				<section class="contact-content">
+					<div class="contact-container">
+						<div class="contact-info-section">
+							<h2>Our Office</h2>
+							<div class="info-card">
+								<h3>Horizon Wealth</h3>
+								<p class="address">
+									Emilii Plater 28<br />
+									00-688 Warszawa<br />
+									Poland
+								</p>
+								<p class="contact-detail">
+									<strong>Email:</strong> <a href="mailto:support@horizonwealth.com">support@horizonwealth.com</a>
+								</p>
+								<p class="contact-detail">
+									<strong>Phone:</strong> <a href="tel:+48123456789">+48 (123) 456-789</a>
+								</p>
+								<p class="contact-detail">
+									<strong>Hours:</strong> Monday - Friday, 9:00 AM - 6:00 PM CET
+								</p>
+							</div>
+						</div>
+
+						<div class="map-section">
+							<h2>Find Us On The Map</h2>
+							<div class="map-container">
+								<iframe 
+									width="100%" 
+									height="500" 
+									style="border:0; border-radius: 12px;" 
+									loading="lazy" 
+									allowfullscreen="" 
+									referrerpolicy="no-referrer-when-downgrade" 
+									src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2441.3606213305473!2d21.01222776776801!3d52.22698497173929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471eccde5df3e34b%3A0x1c1c1c1c1c1c1c1c!2sEmilii%20Plater%2028%2C%2000-688%20Warszawa%2C%20Poland!5e0!3m2!1sen!2spl!4v1234567890">
+								</iframe>
+							</div>
+						</div>
+
+						<div class="contact-form-section">
+							<h2>Send Us a Message</h2>
+							<form class="contact-form" id="whatsapp-form">
+								<div class="form-group">
+									<label for="name">Full Name</label>
+									<input type="text" id="name" name="name" required />
+								</div>
+
+								<div class="form-group">
+									<label for="email">Email Address</label>
+									<input type="email" id="email" name="email" required />
+								</div>
+
+								<div class="form-group">
+									<label for="subject">Subject</label>
+									<input type="text" id="subject" name="subject" required />
+								</div>
+
+								<div class="form-group">
+									<label for="message">Message</label>
+									<textarea id="message" name="message" rows="5" required></textarea>
+								</div>
+
+								<button type="submit" class="submit-btn">
+									<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+										<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-5.031 1.378c-3.055 2.193-4.779 5.99-3.986 9.91 1.051 5.018 5.297 8.471 10.399 8.471.556 0 1.111-.027 1.664-.08 5.339-.558 9.153-4.592 8.621-9.799-.61-5.904-5.921-10.236-11.639-10.236.001 0 .001 0 .001 0zm0-1.344C12.258 5.75 20.675 12.615 19.922 22.106c-.822 10.11-10.19 16.964-20.315 15.214C2.182 36.152 0 33.886 0 30.895c0-4.174 2.766-7.844 6.923-9.776 1.312-.62 2.689-.922 4.109-.922 5.922 0 10.746 4.824 10.746 10.746 0 .468-.031.931-.087 1.388-1.015-.197-2.058-.305-3.126-.305-5.922 0-10.746-4.824-10.746-10.746 0-4.68 3.032-8.765 7.231-10.078"/>
+									</svg>
+									Send
+								</button>
+							</form>
+						</div>
+					</div>
+				</section>
+
+				<section class="faq-quick-section">
+					<div class="faq-container">
+						<h2>Frequently Asked Questions</h2>
+						<div class="faq-grid">
+							<div class="faq-item">
+								<h3>What are your support hours?</h3>
+								<p>Our team is available Monday to Friday, 9:00 AM to 6:00 PM CET. For urgent matters, please send us an email and we'll respond as soon as possible.</p>
+							</div>
+							<div class="faq-item">
+								<h3>How long does it take to get a response?</h3>
+								<p>We typically respond to inquiries within 24 business hours. For urgent matters, we aim to respond within 2-4 hours.</p>
+							</div>
+							<div class="faq-item">
+								<h3>Can I visit your office?</h3>
+								<p>Yes! We welcome visitors by appointment. Please contact us in advance to schedule a meeting. Our office is located in Warsaw, Poland.</p>
+							</div>
+							<div class="faq-item">
+								<h3>Do you offer phone support?</h3>
+								<p>Yes, we offer phone support during business hours. Call us at +48 (123) 456-789 for immediate assistance.</p>
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+		</SmoothScroll>
+		<Footer />
+	</body>
+</html>
+
+<script>
+	document.getElementById('whatsapp-form').addEventListener('submit', function(e) {
+		e.preventDefault();
+
+		const name = document.getElementById('name').value;
+		const email = document.getElementById('email').value;
+		const subject = document.getElementById('subject').value;
+		const message = document.getElementById('message').value;
+
+		// WhatsApp Business number (replace with actual number)
+		const phoneNumber = '48123456789'; // Polish number format
+
+		// Create WhatsApp message
+		const whatsappMessage = `*New Contact Form Submission*
+
+*Name:* ${name}
+*Email:* ${email}
+*Subject:* ${subject}
+
+*Message:*
+${message}`;
+
+		// Encode the message for URL
+		const encodedMessage = encodeURIComponent(whatsappMessage);
+
+		// Open WhatsApp
+		const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+		window.open(whatsappURL, '_blank');
+
+		// Reset form
+		this.reset();
+	});
+</script>
+
+<style>
+	main {
+		min-height: 100vh;
+	}
+
+	.contact-hero {
+		padding: 60px 40px 80px;
+		text-align: center;
+		background: linear-gradient(135deg, #f0f4ff 0%, #ffffff 100%);
+	}
+
+	.contact-hero h1 {
+		font-size: 3.5rem;
+		font-weight: 700;
+		color: #000000;
+		margin: 0 0 20px 0;
+	}
+
+	.contact-tagline {
+		font-size: 1.25rem;
+		color: #6b7280;
+		margin: 0;
+	}
+
+	.contact-content {
+		padding: 80px 40px;
+	}
+
+	.contact-container {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.contact-info-section,
+	.map-section,
+	.contact-form-section {
+		margin-bottom: 80px;
+	}
+
+	.contact-info-section h2,
+	.map-section h2,
+	.contact-form-section h2 {
+		font-size: 2rem;
+		font-weight: 600;
+		color: #1e40af;
+		margin: 0 0 30px 0;
+	}
+
+	.info-card {
+		background: #f8fafc;
+		padding: 40px;
+		border-radius: 12px;
+		border-left: 4px solid #1e40af;
+	}
+
+	.info-card h3 {
+		font-size: 1.5rem;
+		font-weight: 600;
+		color: #000000;
+		margin: 0 0 20px 0;
+	}
+
+	.address {
+		font-size: 1.1rem;
+		color: #333333;
+		margin: 0 0 20px 0;
+		line-height: 1.8;
+	}
+
+	.contact-detail {
+		font-size: 1rem;
+		color: #555555;
+		margin: 12px 0;
+	}
+
+	.contact-detail a {
+		color: #1e40af;
+		text-decoration: none;
+		font-weight: 500;
+		transition: color 0.3s ease;
+	}
+
+	.contact-detail a:hover {
+		color: #1d4ed8;
+	}
+
+	.map-container {
+		border-radius: 12px;
+		overflow: hidden;
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+	}
+
+	.contact-form-section {
+		background: #f8fafc;
+		padding: 50px 40px;
+		border-radius: 12px;
+	}
+
+	.contact-form {
+		max-width: 600px;
+	}
+
+	.form-group {
+		margin-bottom: 25px;
+	}
+
+	.form-group label {
+		display: block;
+		font-weight: 600;
+		color: #1e40af;
+		margin-bottom: 8px;
+		font-size: 0.95rem;
+	}
+
+	.form-group input,
+	.form-group textarea {
+		width: 100%;
+		padding: 12px 15px;
+		border: 2px solid #e5e7eb;
+		border-radius: 8px;
+		font-size: 1rem;
+		font-family: inherit;
+		transition: all 0.3s ease;
+		box-sizing: border-box;
+	}
+
+	.form-group input:focus,
+	.form-group textarea:focus {
+		outline: none;
+		border-color: #1e40af;
+		box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+	}
+
+	.submit-btn {
+		background: linear-gradient(135deg, #25d366 0%, #1da853 100%);
+		color: white;
+		border: none;
+		padding: 14px 40px;
+		font-size: 1rem;
+		font-weight: 600;
+		border-radius: 25px;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 8px;
+	}
+
+	.submit-btn:hover {
+		background: linear-gradient(135deg, #1da853 0%, #128c3f 100%);
+		transform: translateY(-2px);
+		box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+	}
+
+	.submit-btn:active {
+		transform: translateY(0);
+	}
+
+	.faq-quick-section {
+		background: linear-gradient(135deg, #f0f4ff 0%, #ffffff 100%);
+		padding: 80px 40px;
+	}
+
+	.faq-container {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.faq-container h2 {
+		font-size: 2rem;
+		font-weight: 600;
+		color: #1e40af;
+		text-align: center;
+		margin: 0 0 50px 0;
+	}
+
+	.faq-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 30px;
+	}
+
+	.faq-item {
+		background: white;
+		padding: 30px;
+		border-radius: 12px;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+		transition: all 0.3s ease;
+	}
+
+	.faq-item:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+	}
+
+	.faq-item h3 {
+		font-size: 1.1rem;
+		font-weight: 600;
+		color: #1e40af;
+		margin: 0 0 15px 0;
+	}
+
+	.faq-item p {
+		font-size: 0.95rem;
+		color: #555555;
+		line-height: 1.6;
+		margin: 0;
+	}
+
+	@media (max-width: 1024px) {
+		.contact-hero {
+			padding: 50px 30px 60px;
+		}
+
+		.contact-hero h1 {
+			font-size: 2.5rem;
+		}
+
+		.contact-content {
+			padding: 60px 30px;
+		}
+
+		.contact-form-section {
+			padding: 40px 30px;
+		}
+
+		.faq-quick-section {
+			padding: 60px 30px;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.contact-hero {
+			padding: 40px 20px 50px;
+		}
+
+		.contact-hero h1 {
+			font-size: 2rem;
+		}
+
+		.contact-tagline {
+			font-size: 1rem;
+		}
+
+		.contact-content {
+			padding: 40px 20px;
+		}
+
+		.contact-info-section h2,
+		.map-section h2,
+		.contact-form-section h2 {
+			font-size: 1.5rem;
+		}
+
+		.info-card {
+			padding: 25px;
+		}
+
+		.contact-form-section {
+			padding: 30px 20px;
+		}
+
+		.map-container {
+			height: 350px;
+		}
+
+		.faq-quick-section {
+			padding: 50px 20px;
+		}
+
+		.faq-container h2 {
+			font-size: 1.5rem;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.contact-hero {
+			padding: 30px 15px 40px;
+		}
+
+		.contact-hero h1 {
+			font-size: 1.6rem;
+		}
+
+		.contact-content {
+			padding: 30px 15px;
+		}
+
+		.contact-info-section h2,
+		.map-section h2,
+		.contact-form-section h2 {
+			font-size: 1.3rem;
+		}
+
+		.info-card {
+			padding: 20px;
+		}
+
+		.contact-form-section {
+			padding: 20px 15px;
+		}
+
+		.map-container {
+			height: 300px;
+		}
+
+		.faq-quick-section {
+			padding: 40px 15px;
+		}
+
+		.faq-grid {
+			grid-template-columns: 1fr;
+			gap: 20px;
+		}
+	}
+</style>
